@@ -26,14 +26,14 @@ Generative AI tools (*Midjourney, Runway Gen-3, Stable Diffusion, ComfyUI, Kling
 
 **Creovate AI solves this by delivering an end-to-end AI-native platform designed around the full challenge specification:**
 
-| Evaluation Criteria | Weight | Implementation in Creovate AI |
-| :--- | :---: | :--- |
-| **Creator Profiles & AI Portfolios** | **30%** | Full-fidelity creator profiles with verified AI tool stacks, reproducible multi-pass LoRA pipelines, and full **Prompt & Seed Provenance Lightboxes** showing prompts, seeds, samplers, model checkpoints, and IP buyout status. |
-| **Brief Definition & Scoping** | **20%** | Structured brief builder capturing content type, visual style, aspect ratios (`9:16`, `16:9`, `1:1`, `4:5`), commercial licensing terms, preferred AI toolchains, and budget in **Indian Rupees (₹ INR)**. |
-| **Creator Search & Filtering** | **25%** | Multi-attribute, tokenized semantic search across all creator metadata, filters by tool, skill, format, and trust signals, with **sensible empty-state handling** offering contextual 1-click fallback queries. |
-| **Discovery-Through-Delivery Lifecycle** | **15%** | Dual dashboards (Brand Studio & Creator Studio) managing the entire engagement: Brief Published ➔ Proposals ➔ Active Engagement ➔ Multi-Round Generation Drafts with audit logs ➔ Revision Feedback Loop ➔ Milestone Approvals ➔ **Cryptographic Commercial License Certificate**. |
-| **Presentation & Deliverables** | **10%** | Complete data model specification ([`DATA_MODEL.md`](./DATA_MODEL.md)), 5-slide challenge pitch deck ([`APPROACH_PRESENTATION.md`](./APPROACH_PRESENTATION.md)), and interactive in-app modal inspectors. |
-| **Bonus Features** | **+10%** | **Creator Verification Signals** (Verified Tools, Workflows, Past Work trust badges + benchmark runner) and **AI-Assisted Brief Builder** (converts rough concepts into structured briefs in 1 click). |
+| Evaluation Criteria | Implementation in Creovate AI |
+| :--- | :--- |
+| **Creator Profiles & AI Portfolios** | Full-fidelity creator profiles with verified AI tool stacks, reproducible multi-pass LoRA pipelines, and full **Prompt & Seed Provenance Lightboxes** showing prompts, seeds, samplers, model checkpoints, and IP buyout status. |
+| **Brief Definition & Scoping** | Structured brief builder capturing content type, visual style, aspect ratios (`9:16`, `16:9`, `1:1`, `4:5`), commercial licensing terms, preferred AI toolchains, and budget in **Indian Rupees (₹ INR)**. |
+| **Creator Search & Filtering** | Multi-attribute, tokenized semantic search across all creator metadata, filters by tool, skill, format, and trust signals, with **sensible empty-state handling** offering contextual 1-click fallback queries. |
+| **Discovery-Through-Delivery Lifecycle** | Dual dashboards (Brand Studio & Creator Studio) managing the entire engagement: Brief Published ➔ Proposals ➔ Active Engagement ➔ Multi-Round Generation Drafts with audit logs ➔ Revision Feedback Loop ➔ Milestone Approvals ➔ **Cryptographic Commercial License Certificate**. |
+| **Presentation & Deliverables** | Complete data model specification ([`DATA_MODEL.md`](./DATA_MODEL.md)), 5-slide challenge pitch deck ([`APPROACH_PRESENTATION.md`](./APPROACH_PRESENTATION.md)), and interactive in-app modal inspectors. |
+| **Bonus Features** | **Creator Verification Signals** (Verified Tools, Workflows, Past Work trust badges + benchmark runner) and **AI-Assisted Brief Builder** (converts rough concepts into structured briefs in 1 click). |
 
 ---
 
