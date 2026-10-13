@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+    background-color: #0B0D12;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.04) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.03) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.02) 0px, transparent 65%);
+    background-attachment: fixed;
+    color: #F8FAFC;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(16, 185, 129, 0.28);
+    color: #ffffff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0B0D12;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(16, 185, 129, 0.4);
+  }
+}
+
+@layer components {
+  /* Editorial Studio Card */
+  .studio-card {
+    @apply bg-[#141720] border border-white/[0.08] rounded-2xl transition-all duration-300;
+  }
+
+  .studio-card-elevated {
+    @apply bg-[#1C2230] border border-white/[0.1] rounded-2xl shadow-xl transition-all duration-300;
+  }
+
+  .studio-card-hover {
+    @apply studio-card hover:border-[#10B981]/40 hover:bg-[#181C26] hover:shadow-2xl hover:shadow-[#10B981]/5;
+  }
+
+  /* Refined Gradients */
+  .gradient-text {
+    @apply bg-gradient-to-r from-white via-[#E2E8F0] to-[#6EE7B7] bg-clip-text text-transparent;
+  }
+
+  .gradient-text-accent {
+    @apply bg-gradient-to-r from-[#6EE7B7] via-[#10B981] to-[#38BDF8] bg-clip-text text-transparent;
+  }
+
+  .editorial-subheading {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-[#94A3B8];
+  }
+
+  /* Primary Studio Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#10B981] hover:bg-[#059669] text-white font-semibold text-sm rounded-xl
+           transition-all duration-200 active:scale-[0.98]
+           shadow-lg shadow-[#10B981]/25 hover:shadow-[#10B981]/40
+           focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:ring-offset-2 focus:ring-offset-[#0B0D12]
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white/[0.05] hover:bg-white/[0.09] text-[#F8FAFC] font-semibold text-sm rounded-xl
+           border border-white/[0.1] hover:border-white/[0.2]
+           transition-all duration-200 active:scale-[0.98]
+           focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:ring-offset-2 focus:ring-offset-[#0B0D12];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-transparent hover:bg-[#10B981]/10 text-[#6EE7B7] font-semibold text-sm rounded-xl
+           border border-[#10B981]/35 hover:border-[#10B981]/60
+           transition-all duration-200 active:scale-[0.98]
+           focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:ring-offset-2 focus:ring-offset-[#0B0D12];
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-transparent hover:bg-white/[0.05] text-[#94A3B8] hover:text-[#F8FAFC] font-medium text-sm rounded-lg
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-[#10B981];
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-[#141720] border border-white/[0.1] rounded-xl
+           text-[#F8FAFC] placeholder-[#64748B] text-sm
+           transition-all duration-200
+           focus:outline-none focus:border-[#10B981]/60 focus:ring-2 focus:ring-[#10B981]/20 focus:bg-[#181C26];
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-padding {
+    @apply pt-28 pb-20;
+  }
+}

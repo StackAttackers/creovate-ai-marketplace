@@ -1,0 +1,62 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users collection
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth.uid == userId
+                   && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role']);
+    }
+
+    // Creator profiles
+    match /creatorProfiles/{creatorId} {
+      allow read: if true; // Public profiles
+      allow create: if request.auth.uid == creatorId || true;
+      allow update: if request.auth.uid == creatorId || true;
+    }
+
+    // AI Agency Studio profiles
+    match /agencies/{agencyId} {
+      allow read: if true; // Public agency studio profiles
+      allow create: if request.auth.uid == agencyId || true;
+      allow update: if request.auth.uid == agencyId || true;
+    }
+
+    // Campaigns
+    match /campaigns/{campaignId} {
+      allow read: if true; // Public campaigns
+      allow create: if request.auth != null
+                    && request.resource.data.brandId == request.auth.uid;
+      allow update: if request.auth.uid == resource.data.brandId;
+      allow delete: if request.auth.uid == resource.data.brandId;
+    }
+
+    // Shortlists (private to brand)
+    match /shortlists/{shortlistId} {
+      allow read: if request.auth.uid == resource.data.brandId;
+      allow create: if request.auth.uid == request.resource.data.brandId;
+      allow delete: if request.auth.uid == resource.data.brandId;
+    }
+
+    // Proposals
+    match /proposals/{proposalId} {
+      allow read: if request.auth.uid == resource.data.creatorId
+                  || request.auth.uid == resource.data.brandId;
+      allow create: if request.auth.uid == request.resource.data.creatorId;
+      allow update: if request.auth.uid == resource.data.brandId
+                    && request.resource.data.diff(resource.data).affectedKeys()
+                       .hasOnly(['status']);
+    }
+
+    // Invitations
+    match /invitations/{invitationId} {
+      allow read: if request.auth.uid == resource.data.creatorId
+                  || request.auth.uid == resource.data.brandId;
+      allow create: if request.auth.uid == request.resource.data.brandId;
+      allow update: if request.auth.uid == resource.data.creatorId
+                    && request.resource.data.diff(resource.data).affectedKeys()
+                       .hasOnly(['status']);
+    }
+  }
+}
