@@ -26,6 +26,8 @@ import { Modal } from '../components/ui/Modal';
 import { CampaignFormModal } from '../components/campaigns/CampaignFormModal';
 import { InviteCreatorModal } from '../components/campaigns/InviteCreatorModal';
 import { formatCurrency } from '../utils/format';
+import { SafeImage } from '../components/ui/SafeImage';
+import { SafeAvatar } from '../components/ui/SafeAvatar';
 
 import {
   getStoredInvitations,
@@ -351,10 +353,11 @@ export default function BrandDashboardPage() {
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                          <img
-                            src={prop.creatorAvatar || 'https://api.dicebear.com/9.x/avataaars/svg?seed=Maya'}
-                            alt={prop.creatorName}
-                            className="w-6 h-6 rounded-full border border-white/10"
+                          <SafeAvatar
+                            src={prop.creatorAvatar}
+                            name={prop.creatorName}
+                            size="sm"
+                            className="border border-white/10"
                           />
                           <strong className="text-white">{prop.creatorName}</strong>
                         </div>
@@ -557,10 +560,11 @@ export default function BrandDashboardPage() {
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                       <div className="flex items-center gap-3">
-                        <img
-                          src={prop.creatorAvatar || 'https://api.dicebear.com/9.x/avataaars/svg?seed=Maya'}
-                          alt={prop.creatorName}
-                          className="w-10 h-10 rounded-full border border-violet-500/40 object-cover"
+                        <SafeAvatar
+                          src={prop.creatorAvatar}
+                          name={prop.creatorName}
+                          size="md"
+                          className="border border-violet-500/40"
                         />
                         <div>
                           <div className="flex items-center gap-2">
@@ -657,10 +661,12 @@ export default function BrandDashboardPage() {
                 {/* Engagement Header */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-white/10">
                   <div className="flex items-start gap-3.5">
-                    <img
+                    <SafeAvatar
                       src={eng.creatorAvatar}
-                      alt={eng.creatorName}
-                      className="w-12 h-12 rounded-2xl border-2 border-violet-500/40 object-cover"
+                      name={eng.creatorName}
+                      size="lg"
+                      shape="rounded"
+                      className="border-2 border-violet-500/40"
                     />
                     <div>
                       <div className="flex items-center gap-2">
@@ -764,9 +770,10 @@ export default function BrandDashboardPage() {
                               className="rounded-xl border border-white/10 bg-midnight-900/90 overflow-hidden flex flex-col justify-between"
                             >
                               <div className="relative aspect-video bg-black overflow-hidden group">
-                                <img
+                                <SafeImage
                                   src={del.mediaUrl}
                                   alt={del.title}
+                                  containerClassName="w-full h-full"
                                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 />
                                 <div className="absolute top-2 left-2 flex items-center gap-1.5">
@@ -854,10 +861,11 @@ export default function BrandDashboardPage() {
                     className="rounded-2xl border border-white/[0.08] bg-midnight-800/80 p-5 backdrop-blur-xl flex flex-col justify-between space-y-3"
                   >
                     <div className="flex items-center gap-3">
-                      <img
+                      <SafeAvatar
                         src={creator.avatarUrl}
-                        alt={creator.displayName}
-                        className="w-12 h-12 rounded-full border border-violet-500/40 object-cover"
+                        name={creator.displayName}
+                        size="lg"
+                        className="border border-violet-500/40"
                       />
                       <div>
                         <h4 className="font-bold text-white text-sm">{creator.displayName}</h4>

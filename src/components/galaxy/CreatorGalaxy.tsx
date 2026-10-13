@@ -5,6 +5,7 @@ import type { CreatorProfile } from '../../types/creator';
 import { formatPriceRange } from '../../utils/format';
 import { Sparkles, ExternalLink } from 'lucide-react';
 import { Button } from '../ui/Button';
+import { SafeAvatar } from '../ui/SafeAvatar';
 
 interface CreatorGalaxyProps {
   creators: CreatorProfile[];
@@ -294,10 +295,12 @@ export function CreatorGalaxy({
           className="pointer-events-none absolute z-20 w-64 rounded-2xl border border-violet-500/30 bg-midnight-900/90 p-3.5 shadow-2xl backdrop-blur-xl transition-all"
         >
           <div className="flex items-center gap-3 mb-2">
-            <img
+            <SafeAvatar
               src={hoveredCreator.avatarUrl}
-              alt={hoveredCreator.displayName}
-              className="h-10 w-10 rounded-xl border border-violet-500/40 object-cover"
+              name={hoveredCreator.displayName}
+              size="md"
+              shape="rounded"
+              className="border border-violet-500/40"
             />
             <div className="min-w-0">
               <h4 className="font-bold text-white text-sm truncate">
@@ -323,10 +326,12 @@ export function CreatorGalaxy({
         <div className="absolute top-4 right-4 z-20 w-80 rounded-3xl border border-violet-500/40 bg-midnight-900/95 p-5 shadow-2xl backdrop-blur-2xl text-left space-y-4">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-3">
-              <img
+              <SafeAvatar
                 src={selectedCreator.avatarUrl}
-                alt={selectedCreator.displayName}
-                className="h-12 w-12 rounded-2xl border-2 border-violet-500/40 object-cover"
+                name={selectedCreator.displayName}
+                size="lg"
+                shape="rounded"
+                className="border-2 border-violet-500/40"
               />
               <div>
                 <h3 className="font-bold text-white text-base">

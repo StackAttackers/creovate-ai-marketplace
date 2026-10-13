@@ -23,6 +23,7 @@ import {
   saveCreatorProfileToFirestore,
   saveUserProfileToFirestore,
 } from '../../services/firebase/firestore';
+import { SafeImage } from '../ui/SafeImage';
 import type { CreatorProfile, CreativeCategory } from '../../types/creator';
 import { formatCurrency } from '../../utils/format';
 import { Button } from '../ui/Button';
@@ -588,7 +589,12 @@ export function CreatorAgencyRegistrationModal({
                           : 'border-white/10 opacity-60 hover:opacity-100'
                       }`}
                     >
-                      <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover" />
+                      <SafeImage
+                        src={item.imageUrl}
+                        alt={item.title}
+                        containerClassName="w-full h-full pointer-events-none"
+                        className="w-full h-full object-cover"
+                      />
                       <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-1 text-center">
                         <span className="text-[9px] font-bold text-white line-clamp-2">{item.title}</span>
                       </div>

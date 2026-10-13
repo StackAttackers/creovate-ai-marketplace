@@ -15,6 +15,7 @@ import type { CreativeCategory } from '../../types/creator';
 import type { Campaign } from '../../types/campaign';
 import { formatCurrency, formatPriceRange } from '../../utils/format';
 import { Button } from '../ui/Button';
+import { SafeAvatar } from '../ui/SafeAvatar';
 
 interface BrandRequirementMatcherModalProps {
   isOpen: boolean;
@@ -377,10 +378,12 @@ export function BrandRequirementMatcherModal({
                   className="rounded-2xl border border-white/10 bg-[#0B0D12] p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-emerald-500/40 transition-all shadow-md"
                 >
                   <div className="flex items-start gap-4">
-                    <img
+                    <SafeAvatar
                       src={result.creatorAvatar}
-                      alt={result.creatorName}
-                      className="w-14 h-14 rounded-2xl border-2 border-emerald-500/30 object-cover shrink-0"
+                      name={result.creatorName}
+                      size="lg"
+                      shape="rounded"
+                      className="border-2 border-emerald-500/30 shrink-0"
                     />
 
                     <div>

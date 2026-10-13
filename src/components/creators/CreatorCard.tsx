@@ -4,6 +4,8 @@ import { Heart, Star, Sparkles, CheckCircle2 } from 'lucide-react';
 import type { CreatorProfile } from '../../types/creator';
 import { useShortlist } from '../../hooks/useShortlist';
 import { formatCurrency } from '../../utils/format';
+import { SafeImage } from '../ui/SafeImage';
+import { SafeAvatar } from '../ui/SafeAvatar';
 
 interface CreatorCardProps {
   creator: CreatorProfile;
@@ -42,6 +44,10 @@ export function CreatorCard({ creator, onInvite }: CreatorCardProps) {
   const rating = 4.9;
   const reviewCount = (creator.uid.charCodeAt(creator.uid.length - 1) % 40) + 18;
 
+  const thumbnailSrc =
+    creator.portfolio[0]?.imageUrl ||
+    'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&h=600&fit=crop';
+
   return (
     <motion.div
       whileHover={{ y: -4 }}
@@ -52,19 +58,17 @@ export function CreatorCard({ creator, onInvite }: CreatorCardProps) {
         {/* Fiverr-Style Gig Media Thumbnail */}
         <div className="relative aspect-[16/10] overflow-hidden bg-[#090A12]">
           <Link to={`/creators/${creator.uid}`}>
-            <img
-              src={
-                creator.portfolio[0]?.imageUrl ||
-                'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&h=400&fit=crop'
-              }
+            <SafeImage
+              src={thumbnailSrc}
               alt={creator.displayName}
+              category={creator.categories[0]}
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
+              containerClassName="h-full w-full"
             />
           </Link>
 
           {/* Badges Overlay */}
-          <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+          <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 z-10 pointer-events-none">
             {creator.featured && (
               <span className="rounded-md bg-[#10B981] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-md flex items-center gap-1">
                 <Sparkles className="w-2.5 h-2.5" /> PRO VERIFIED
@@ -83,7 +87,7 @@ export function CreatorCard({ creator, onInvite }: CreatorCardProps) {
               toggleShortlist(creator.uid);
             }}
             title={saved ? 'Remove from saved' : 'Save to shortlist'}
-            className="absolute top-2.5 right-2.5 rounded-full bg-[#090A12]/70 p-2 text-white backdrop-blur-md transition-all hover:bg-black/90 hover:scale-110"
+            className="absolute top-2.5 right-2.5 rounded-full bg-[#090A12]/70 p-2 text-white backdrop-blur-md transition-all hover:bg-black/90 hover:scale-110 z-10"
           >
             <Heart className={`w-3.5 h-3.5 ${saved ? 'fill-rose-500 text-rose-500' : 'text-white'}`} />
           </button>
@@ -97,10 +101,11 @@ export function CreatorCard({ creator, onInvite }: CreatorCardProps) {
               to={`/creators/${creator.uid}`}
               className="flex items-center gap-2.5 group/author min-w-0"
             >
-              <img
+              <SafeAvatar
                 src={creator.avatarUrl}
-                alt={creator.displayName}
-                className="h-7 w-7 rounded-full object-cover border border-white/20 shrink-0"
+                name={creator.displayName}
+                sizeClass="h-7 w-7"
+                className="border border-white/20"
               />
               <div className="min-w-0">
                 <div className="flex items-center gap-1">

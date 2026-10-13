@@ -379,7 +379,7 @@ export function getStoredEngagements(): Engagement[] {
                 id: 'd-2-1',
                 roundNumber: 1,
                 title: 'Generation Draft v1 — Hero Runner Scene',
-                mediaUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=600&fit=crop',
+                mediaUrl: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=800&h=600&fit=crop',
                 contentType: 'Video',
                 generationPrompt: 'Hyper-speed tracking shot of cyber sneaker landing on puddle with luminescent purple droplets, neon city skyline, slow motion 60fps --motion 6',
                 modelUsed: 'Runway Gen-3 Alpha',

@@ -26,6 +26,8 @@ import { useShortlist } from '../hooks/useShortlist';
 import { Button } from '../components/ui/Button';
 import { Badge } from '../components/ui/Badge';
 import { InviteCreatorModal } from '../components/campaigns/InviteCreatorModal';
+import { SafeImage } from '../components/ui/SafeImage';
+import { SafeAvatar } from '../components/ui/SafeAvatar';
 import {
   formatCurrency,
   getAvailabilityLabel,
@@ -257,10 +259,11 @@ export default function CreatorProfilePage() {
           {/* Seller Metadata Header Bar */}
           <div className="mt-3 flex flex-wrap items-center gap-3 sm:gap-4 text-xs">
             <div className="flex items-center gap-2.5">
-              <img
+              <SafeAvatar
                 src={creator.avatarUrl}
-                alt={creator.displayName}
-                className="w-8 h-8 rounded-full border border-violet-500/40 object-cover"
+                name={creator.displayName}
+                sizeClass="w-8 h-8"
+                className="border border-violet-500/40"
               />
               <span className="font-bold text-white hover:text-violet-300 transition-colors cursor-pointer">
                 {creator.displayName}
@@ -389,15 +392,17 @@ export default function CreatorProfilePage() {
                 className="relative aspect-video w-full bg-midnight-950 overflow-hidden cursor-pointer group"
                 onClick={() => setSelectedPortfolioItem(currentMedia)}
               >
-                <img
+                <SafeImage
                   src={currentMedia.imageUrl}
                   alt={currentMedia.title}
+                  category={currentMedia.category}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
+                  containerClassName="w-full h-full"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight-950/80 via-transparent to-transparent pointer-events-none" />
 
-                <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none">
+                <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between pointer-events-none z-10">
                   <div>
                     <span className="inline-block bg-violet-600/90 backdrop-blur-md px-2.5 py-1 rounded text-[11px] font-bold text-white mb-1.5 uppercase tracking-wider">
                       {currentMedia.category}
@@ -425,7 +430,13 @@ export default function CreatorProfilePage() {
                         : 'border-white/10 opacity-60 hover:opacity-100'
                     }`}
                   >
-                    <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover" />
+                    <SafeImage
+                      src={item.imageUrl}
+                      alt={item.title}
+                      category={item.category}
+                      className="w-full h-full object-cover"
+                      containerClassName="w-full h-full"
+                    />
                   </button>
                 ))}
               </div>
@@ -508,10 +519,11 @@ export default function CreatorProfilePage() {
               </h2>
 
               <div className="flex flex-col sm:flex-row items-start gap-5 mb-6">
-                <img
+                <SafeAvatar
                   src={creator.avatarUrl}
-                  alt={creator.displayName}
-                  className="w-20 h-20 rounded-2xl border-2 border-violet-500/40 object-cover shadow-xl"
+                  name={creator.displayName}
+                  sizeClass="w-20 h-20"
+                  className="rounded-2xl border-2 border-violet-500/40 shadow-xl"
                 />
 
                 <div className="flex-1">
@@ -868,10 +880,12 @@ export default function CreatorProfilePage() {
               </button>
 
               <div className="aspect-video w-full overflow-hidden rounded-xl bg-midnight-950 mb-4">
-                <img
+                <SafeImage
                   src={selectedPortfolioItem.imageUrl}
                   alt={selectedPortfolioItem.title}
+                  category={selectedPortfolioItem.category}
                   className="h-full w-full object-cover"
+                  containerClassName="h-full w-full"
                 />
               </div>
 

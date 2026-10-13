@@ -20,6 +20,8 @@ import { CreatorCard } from '../components/creators/CreatorCard';
 import { CreatorAgencyRegistrationModal } from '../components/onboarding/CreatorAgencyRegistrationModal';
 import { BrandRequirementMatcherModal } from '../components/onboarding/BrandRequirementMatcherModal';
 import { InviteCreatorModal } from '../components/campaigns/InviteCreatorModal';
+import { SafeImage } from '../components/ui/SafeImage';
+import { SafeAvatar } from '../components/ui/SafeAvatar';
 
 const popularServices = [
   {
@@ -333,11 +335,12 @@ export default function LandingPage() {
               className="group cursor-pointer relative h-80 rounded-2xl overflow-hidden border border-white/15 p-5 flex flex-col justify-between shadow-2xl transition-all duration-300 hover:border-emerald-400 hover:scale-[1.03] hover:shadow-emerald-500/10"
             >
               {/* Full-color crystal-clear image with smooth zoom */}
-              <img
+              <SafeImage
                 src={svc.imageUrl}
                 alt={svc.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 brightness-[0.95] group-hover:brightness-105"
-                loading="lazy"
+                category={svc.category}
+                containerClassName="absolute inset-0 w-full h-full"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 brightness-[0.95] group-hover:brightness-105"
               />
 
               {/* Gentle bottom gradient for text contrast without obscuring the artwork */}
@@ -603,10 +606,11 @@ export default function LandingPage() {
                         <span className="w-6 h-6 rounded-lg bg-white/5 font-mono text-xs font-bold text-gray-400 flex items-center justify-center shrink-0">
                           #{i + 1}
                         </span>
-                        <img
+                        <SafeAvatar
                           src={res.creatorAvatar}
                           alt={res.creatorName}
-                          className="w-10 h-10 rounded-xl bg-[#0B0D12] border border-white/10 object-cover shrink-0"
+                          size="md"
+                          className="rounded-xl border border-white/10 shrink-0"
                         />
                         <div className="min-w-0">
                           <h4 className="text-sm font-bold text-white truncate">

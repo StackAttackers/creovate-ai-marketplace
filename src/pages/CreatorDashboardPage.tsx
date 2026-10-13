@@ -21,6 +21,8 @@ import { Input } from '../components/ui/Input';
 import { Select } from '../components/ui/Select';
 import { Modal } from '../components/ui/Modal';
 import { formatCurrency, formatPriceRange } from '../utils/format';
+import { SafeImage } from '../components/ui/SafeImage';
+import { SafeAvatar } from '../components/ui/SafeAvatar';
 import {
   getStoredInvitations,
   updateInvitationStatus,
@@ -275,10 +277,12 @@ export default function CreatorDashboardPage() {
         {/* Header */}
         <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <img
+            <SafeAvatar
               src={initialCreator.avatarUrl}
-              alt={user?.displayName || 'Creator'}
-              className="h-16 w-16 rounded-2xl border-2 border-violet-500/40 object-cover bg-midnight-900"
+              name={user?.displayName || initialCreator.displayName}
+              size="lg"
+              shape="rounded"
+              className="border-2 border-violet-500/40"
             />
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-400 mb-1">
@@ -536,9 +540,10 @@ export default function CreatorDashboardPage() {
                                 className="rounded-xl border border-white/10 bg-midnight-900/90 overflow-hidden flex flex-col justify-between"
                               >
                                 <div className="relative aspect-video bg-black overflow-hidden group">
-                                  <img
+                                  <SafeImage
                                     src={del.mediaUrl}
                                     alt={del.title}
+                                    containerClassName="w-full h-full"
                                     className="w-full h-full object-cover"
                                   />
                                   <div className="absolute top-2 left-2 flex items-center gap-1.5">
@@ -702,7 +707,13 @@ export default function CreatorDashboardPage() {
                   className="rounded-2xl border border-white/[0.08] bg-midnight-800/80 overflow-hidden flex flex-col justify-between shadow-xl"
                 >
                   <div className="relative aspect-video bg-black overflow-hidden">
-                    <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover" />
+                    <SafeImage
+                      src={item.imageUrl}
+                      alt={item.title}
+                      category={item.category}
+                      containerClassName="w-full h-full"
+                      className="w-full h-full object-cover"
+                    />
                     <div className="absolute top-2 left-2 flex items-center gap-1.5">
                       <span className="px-2 py-0.5 rounded bg-black/75 backdrop-blur-md text-[10px] font-bold text-white">
                         {item.category}

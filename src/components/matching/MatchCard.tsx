@@ -12,6 +12,8 @@ import {
 } from 'lucide-react';
 import type { MatchResult } from '../../types/matching';
 import { Button } from '../ui/Button';
+import { SafeImage } from '../ui/SafeImage';
+import { SafeAvatar } from '../ui/SafeAvatar';
 import { useShortlist } from '../../hooks/useShortlist';
 
 interface MatchCardProps {
@@ -49,10 +51,12 @@ export function MatchCard({ result, rank, onInvite }: MatchCardProps) {
           </div>
 
           {/* Avatar */}
-          <img
+          <SafeAvatar
             src={result.creatorAvatar}
-            alt={result.creatorName}
-            className="h-14 w-14 shrink-0 rounded-2xl border-2 border-violet-500/30 object-cover bg-midnight-900"
+            name={result.creatorName}
+            size="lg"
+            shape="rounded"
+            className="border-2 border-violet-500/30 shrink-0"
           />
 
           {/* Titles */}
@@ -243,9 +247,11 @@ export function MatchCard({ result, rank, onInvite }: MatchCardProps) {
                       key={item.id}
                       className="group/item relative overflow-hidden rounded-xl border border-white/10 bg-midnight-900 aspect-video"
                     >
-                      <img
+                      <SafeImage
                         src={item.imageUrl}
                         alt={item.title}
+                        category={item.category}
+                        containerClassName="h-full w-full"
                         className="h-full w-full object-cover transition-transform group-hover/item:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-midnight-900/90 via-transparent to-transparent flex items-end p-2">

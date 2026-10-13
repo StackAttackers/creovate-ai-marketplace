@@ -28,6 +28,7 @@ import {
   fetchAgenciesFromFirestore,
 } from '../../services/firebase/firestore';
 import type { CreatorProfile } from '../../types/creator';
+import { SafeAvatar } from '../ui/SafeAvatar';
 import { formatCurrency } from '../../utils/format';
 
 interface FirebaseStatusModalProps {
@@ -382,10 +383,12 @@ export function FirebaseStatusModal({ isOpen, onClose }: FirebaseStatusModalProp
                             : 'border-white/10 bg-[#161B26] hover:bg-[#1C2230] text-gray-300'
                         }`}
                       >
-                        <img
+                        <SafeAvatar
                           src={c.avatarUrl}
-                          alt={c.displayName}
-                          className="w-10 h-10 rounded-xl object-cover shrink-0 border border-white/10"
+                          name={c.displayName}
+                          size="md"
+                          shape="rounded"
+                          className="shrink-0 border border-white/10"
                         />
                         <div className="min-w-0 flex-1">
                           <div className="flex items-center justify-between gap-1">
@@ -414,10 +417,12 @@ export function FirebaseStatusModal({ isOpen, onClose }: FirebaseStatusModalProp
                     <>
                       <div className="flex items-center justify-between pb-3 border-b border-white/10">
                         <div className="flex items-center gap-3">
-                          <img
+                          <SafeAvatar
                             src={selectedProfile.avatarUrl}
-                            alt={selectedProfile.displayName}
-                            className="w-12 h-12 rounded-xl object-cover border border-white/10"
+                            name={selectedProfile.displayName}
+                            size="lg"
+                            shape="rounded"
+                            className="border border-white/10"
                           />
                           <div>
                             <div className="flex items-center gap-2">
