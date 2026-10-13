@@ -1,6 +1,6 @@
 # Creovate AI — AI Content Creator Marketplace 🚀
 
-[![Netlify Status](https://img.shields.io/badge/Netlify-Deployed-00C7B7?style=flat&logo=netlify&logoColor=white)](https://6ace49f75f3221a932831ca8--creovate-ai-marketplace.netlify.app)
+[![Netlify Status](https://img.shields.io/badge/Netlify-Deployed-00C7B7?style=flat&logo=netlify&logoColor=white)](https://6ace60785c2d9c56cd4a0e53--creovate-ai-marketplace.netlify.app)
 [![React 19](https://img.shields.io/badge/React-19.0-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v3.4-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
@@ -13,7 +13,7 @@
 
 ## 🌐 Live Application & Demo Links
 
-- **🚀 Live Application (Netlify)**: [https://6ace49f75f3221a932831ca8--creovate-ai-marketplace.netlify.app](https://6ace49f75f3221a932831ca8--creovate-ai-marketplace.netlify.app)
+- **🚀 Live Application (Netlify)**: [https://6ace60785c2d9c56cd4a0e53--creovate-ai-marketplace.netlify.app](https://6ace60785c2d9c56cd4a0e53--creovate-ai-marketplace.netlify.app)
 - **📊 Interactive Data Model Spec**: [`DATA_MODEL.md`](./DATA_MODEL.md) *(also inspectable via the "Data Model" button in the app header)*
 - **📑 5-Slide Challenge Presentation**: [`APPROACH_PRESENTATION.md`](./APPROACH_PRESENTATION.md) *(also viewable via the "Demo Slides" button in the app header)*
 - **🛠️ Netlify Project Dashboard**: [https://app.netlify.com/projects/creovate-ai-marketplace](https://app.netlify.com/projects/creovate-ai-marketplace)
