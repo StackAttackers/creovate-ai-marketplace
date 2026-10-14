@@ -165,18 +165,18 @@ export default function BrandDashboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-midnight-900 pt-24 pb-20 text-white">
+    <div className="min-h-screen bg-white pt-24 pb-20 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-400 mb-1">
+            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#2563EB] mb-1">
               <Briefcase className="w-3.5 h-3.5" /> Brand Studio Workspace
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black text-white">
+            <h1 className="text-2xl sm:text-3xl font-black text-slate-900">
               Welcome, {user?.displayName || 'Creative Director'}
             </h1>
-            <p className="text-xs sm:text-sm text-gray-400 mt-1">
+            <p className="text-xs sm:text-sm text-slate-600 mt-1">
               Publish AI-assisted creative briefs, review creator proposals, and manage engagements from discovery through delivery.
             </p>
           </div>
@@ -186,7 +186,7 @@ export default function BrandDashboardPage() {
               <Button
                 variant="secondary"
                 size="sm"
-                leftIcon={<Sparkles className="w-4 h-4 text-violet-400" />}
+                leftIcon={<Sparkles className="w-4 h-4 text-[#2563EB]" />}
               >
                 AI Match Finder
               </Button>
@@ -203,7 +203,7 @@ export default function BrandDashboardPage() {
         </div>
 
         {/* Navigation Tabs */}
-        <div className="border-b border-white/10 mb-8 flex gap-4 sm:gap-6 text-xs sm:text-sm overflow-x-auto scrollbar-none">
+        <div className="border-b border-slate-200 mb-8 flex gap-4 sm:gap-6 text-xs sm:text-sm overflow-x-auto scrollbar-none">
           {[
             { id: 'overview', label: 'Overview' },
             { id: 'campaigns', label: `Briefs (${campaigns.length})` },
@@ -216,14 +216,14 @@ export default function BrandDashboardPage() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
               className={`pb-3 font-semibold transition-all relative whitespace-nowrap ${
-                activeTab === tab.id ? 'text-violet-400' : 'text-gray-400 hover:text-white'
+                activeTab === tab.id ? 'text-[#2563EB]' : 'text-slate-500 hover:text-slate-900'
               }`}
             >
               {tab.label}
               {activeTab === tab.id && (
                 <motion.div
                   layoutId="brandTabUnderline"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-violet-500 shadow-sm shadow-violet-500/50"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#2563EB] shadow-sm shadow-blue-500/50"
                 />
               )}
             </button>
@@ -235,12 +235,12 @@ export default function BrandDashboardPage() {
           <div className="space-y-8">
             {/* Stat Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="rounded-2xl border border-white/[0.08] bg-midnight-800/60 p-5 backdrop-blur-xl">
-                <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 block mb-1">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 shadow-sm">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block mb-1">
                   Active Briefs
                 </span>
-                <span className="text-3xl font-black text-white">{campaigns.length}</span>
-                <div className="mt-2 text-xs text-emerald-400 flex items-center gap-1 font-medium">
+                <span className="text-3xl font-black text-slate-900">{campaigns.length}</span>
+                <div className="mt-2 text-xs text-[#2563EB] flex items-center gap-1 font-medium">
                   <CheckCircle2 className="w-3.5 h-3.5" /> Commercial IP Buyout Protected
                 </div>
               </div>

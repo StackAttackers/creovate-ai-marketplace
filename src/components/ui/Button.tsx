@@ -26,19 +26,19 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 select-none focus:outline-none focus:ring-2 focus:ring-violet-400 focus:ring-offset-2 focus:ring-offset-midnight-900 disabled:opacity-50 disabled:cursor-not-allowed';
+      'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 select-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white disabled:opacity-50 disabled:cursor-not-allowed';
 
     const variants = {
       primary:
-        'bg-violet-600 hover:bg-violet-500 text-white shadow-lg shadow-violet-600/20 hover:shadow-violet-500/30 active:scale-[0.98]',
+        'bg-blue-600 hover:bg-blue-700 text-white shadow-md shadow-blue-600/25 active:scale-[0.98]',
       secondary:
-        'bg-white/[0.06] hover:bg-white/[0.1] text-white border border-white/[0.1] hover:border-violet-500/30 active:scale-[0.98]',
+        'bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 hover:border-slate-300 active:scale-[0.98]',
       outline:
-        'bg-transparent hover:bg-violet-500/10 text-violet-400 border border-violet-500/30 hover:border-violet-500/60 active:scale-[0.98]',
+        'bg-transparent hover:bg-blue-50 text-blue-600 border border-blue-200 hover:border-blue-400 active:scale-[0.98]',
       ghost:
-        'bg-transparent hover:bg-white/[0.06] text-gray-300 hover:text-white',
+        'bg-transparent hover:bg-slate-100 text-slate-600 hover:text-slate-900',
       danger:
-        'bg-rose-600 hover:bg-rose-500 text-white shadow-lg shadow-rose-600/20 active:scale-[0.98]',
+        'bg-rose-600 hover:bg-rose-700 text-white shadow-md shadow-rose-600/20 active:scale-[0.98]',
     };
 
     const sizes = {

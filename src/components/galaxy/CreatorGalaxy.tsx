@@ -292,7 +292,7 @@ export function CreatorGalaxy({
             left: `${tooltipPos.x + 15}px`,
             top: `${tooltipPos.y - 15}px`,
           }}
-          className="pointer-events-none absolute z-20 w-64 rounded-2xl border border-violet-500/30 bg-midnight-900/90 p-3.5 shadow-2xl backdrop-blur-xl transition-all"
+          className="pointer-events-none absolute z-20 w-64 rounded-2xl border border-blue-200 bg-white/95 p-3.5 shadow-2xl backdrop-blur-xl transition-all text-slate-900"
         >
           <div className="flex items-center gap-3 mb-2">
             <SafeAvatar
@@ -300,30 +300,30 @@ export function CreatorGalaxy({
               name={hoveredCreator.displayName}
               size="md"
               shape="rounded"
-              className="border border-violet-500/40"
+              className="border border-blue-200"
             />
             <div className="min-w-0">
-              <h4 className="font-bold text-white text-sm truncate">
+              <h4 className="font-bold text-slate-900 text-sm truncate">
                 {hoveredCreator.displayName}
               </h4>
-              <p className="text-[11px] text-violet-300 truncate">
+              <p className="text-[11px] text-blue-600 font-medium truncate">
                 {hoveredCreator.categories[0]}
               </p>
             </div>
           </div>
-          <p className="line-clamp-2 text-[11px] text-gray-300 mb-2">
+          <p className="line-clamp-2 text-[11px] text-slate-600 mb-2">
             {hoveredCreator.headline}
           </p>
-          <div className="flex justify-between items-center text-[11px] font-semibold text-white pt-2 border-t border-white/10">
-            <span>Rate</span>
-            <span>{formatPriceRange(hoveredCreator.priceRange.min, hoveredCreator.priceRange.max)}</span>
+          <div className="flex justify-between items-center text-[11px] font-semibold text-slate-900 pt-2 border-t border-slate-100">
+            <span className="text-slate-500">Rate</span>
+            <span className="font-bold text-blue-600">{formatPriceRange(hoveredCreator.priceRange.min, hoveredCreator.priceRange.max)}</span>
           </div>
         </div>
       )}
 
       {/* Selected Creator Drawer Card */}
       {selectedCreator && (
-        <div className="absolute top-4 right-4 z-20 w-80 rounded-3xl border border-violet-500/40 bg-midnight-900/95 p-5 shadow-2xl backdrop-blur-2xl text-left space-y-4">
+        <div className="absolute top-4 right-4 z-20 w-80 rounded-3xl border border-slate-200 bg-white/95 p-5 shadow-2xl backdrop-blur-2xl text-left space-y-4 text-slate-900">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-3">
               <SafeAvatar
@@ -331,26 +331,26 @@ export function CreatorGalaxy({
                 name={selectedCreator.displayName}
                 size="lg"
                 shape="rounded"
-                className="border-2 border-violet-500/40"
+                className="border-2 border-blue-200"
               />
               <div>
-                <h3 className="font-bold text-white text-base">
+                <h3 className="font-bold text-slate-900 text-base">
                   {selectedCreator.displayName}
                 </h3>
-                <span className="text-xs text-violet-300">
+                <span className="text-xs text-blue-600 font-medium">
                   {selectedCreator.categories[0]}
                 </span>
               </div>
             </div>
             <button
               onClick={() => setSelectedCreator(null)}
-              className="text-gray-400 hover:text-white text-sm p-1"
+              className="text-slate-400 hover:text-slate-700 text-sm p-1 rounded-lg hover:bg-slate-100 transition-colors"
             >
               ✕
             </button>
           </div>
 
-          <p className="text-xs text-gray-300 line-clamp-3 leading-relaxed">
+          <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
             {selectedCreator.biography}
           </p>
 
@@ -358,16 +358,16 @@ export function CreatorGalaxy({
             {selectedCreator.skills.slice(0, 4).map((s) => (
               <span
                 key={s}
-                className="rounded-lg bg-white/5 px-2 py-0.5 text-[10px] text-gray-300"
+                className="rounded-lg bg-slate-100 border border-slate-200 px-2 py-0.5 text-[10px] text-slate-700 font-medium"
               >
                 {s}
               </span>
             ))}
           </div>
 
-          <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs">
-            <span className="text-gray-400">Indicative Rate:</span>
-            <strong className="text-white">
+          <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+            <span className="text-slate-500">Indicative Rate:</span>
+            <strong className="text-blue-600 font-bold">
               {formatPriceRange(selectedCreator.priceRange.min, selectedCreator.priceRange.max)}
             </strong>
           </div>
@@ -376,7 +376,7 @@ export function CreatorGalaxy({
             <Button
               size="sm"
               variant="primary"
-              className="w-full text-xs"
+              className="w-full text-xs shadow-md shadow-blue-500/20"
               onClick={() => navigate(`/creators/${selectedCreator.uid}`)}
               rightIcon={<ExternalLink className="w-3.5 h-3.5" />}
             >

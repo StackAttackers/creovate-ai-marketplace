@@ -19,19 +19,19 @@
 
   body {
     font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
-    background-color: #0B0D12;
+    background-color: #FFFFFF;
     background-image: 
-      radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.04) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.03) 0px, transparent 50%),
-      radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.02) 0px, transparent 65%);
+      radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.04) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.04) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(37, 99, 235, 0.02) 0px, transparent 65%);
     background-attachment: fixed;
-    color: #F8FAFC;
+    color: #0F172A;
     overflow-x: hidden;
   }
 
   ::selection {
-    background-color: rgba(16, 185, 129, 0.28);
-    color: #ffffff;
+    background-color: rgba(37, 99, 235, 0.2);
+    color: #1E40AF;
   }
 
   ::-webkit-scrollbar {
@@ -39,80 +39,80 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #0B0D12;
+    background: #F1F5F9;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(148, 163, 184, 0.4);
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(16, 185, 129, 0.4);
+    background: rgba(37, 99, 235, 0.5);
   }
 }
 
 @layer components {
   /* Editorial Studio Card */
   .studio-card {
-    @apply bg-[#141720] border border-white/[0.08] rounded-2xl transition-all duration-300;
+    @apply bg-white border border-slate-200/90 shadow-sm rounded-2xl transition-all duration-300;
   }
 
   .studio-card-elevated {
-    @apply bg-[#1C2230] border border-white/[0.1] rounded-2xl shadow-xl transition-all duration-300;
+    @apply bg-white border border-slate-200 rounded-2xl shadow-xl transition-all duration-300;
   }
 
   .studio-card-hover {
-    @apply studio-card hover:border-[#10B981]/40 hover:bg-[#181C26] hover:shadow-2xl hover:shadow-[#10B981]/5;
+    @apply studio-card hover:border-blue-500/60 hover:bg-blue-50/20 hover:shadow-xl hover:shadow-blue-500/5;
   }
 
   /* Refined Gradients */
   .gradient-text {
-    @apply bg-gradient-to-r from-white via-[#E2E8F0] to-[#6EE7B7] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-slate-900 via-blue-900 to-blue-600 bg-clip-text text-transparent;
   }
 
   .gradient-text-accent {
-    @apply bg-gradient-to-r from-[#6EE7B7] via-[#10B981] to-[#38BDF8] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 bg-clip-text text-transparent;
   }
 
   .editorial-subheading {
-    @apply text-xs font-semibold uppercase tracking-[0.2em] text-[#94A3B8];
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-slate-500;
   }
 
   /* Primary Studio Buttons */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#10B981] hover:bg-[#059669] text-white font-semibold text-sm rounded-xl
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-semibold text-sm rounded-xl
            transition-all duration-200 active:scale-[0.98]
-           shadow-lg shadow-[#10B981]/25 hover:shadow-[#10B981]/40
-           focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:ring-offset-2 focus:ring-offset-[#0B0D12]
+           shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40
+           focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-white
            disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-white/[0.05] hover:bg-white/[0.09] text-[#F8FAFC] font-semibold text-sm rounded-xl
-           border border-white/[0.1] hover:border-white/[0.2]
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm rounded-xl
+           border border-slate-200 hover:border-slate-300
            transition-all duration-200 active:scale-[0.98]
-           focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:ring-offset-2 focus:ring-offset-[#0B0D12];
+           focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-white;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-transparent hover:bg-[#10B981]/10 text-[#6EE7B7] font-semibold text-sm rounded-xl
-           border border-[#10B981]/35 hover:border-[#10B981]/60
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-transparent hover:bg-blue-50 text-blue-600 font-semibold text-sm rounded-xl
+           border border-blue-500/40 hover:border-blue-600
            transition-all duration-200 active:scale-[0.98]
-           focus:outline-none focus:ring-2 focus:ring-[#10B981] focus:ring-offset-2 focus:ring-offset-[#0B0D12];
+           focus:outline-none focus:ring-2 focus:ring-[#2563EB] focus:ring-offset-2 focus:ring-offset-white;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-transparent hover:bg-white/[0.05] text-[#94A3B8] hover:text-[#F8FAFC] font-medium text-sm rounded-lg
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 bg-transparent hover:bg-slate-100 text-slate-600 hover:text-slate-900 font-medium text-sm rounded-lg
            transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-[#10B981];
+           focus:outline-none focus:ring-2 focus:ring-[#2563EB];
   }
 
   .input-field {
-    @apply w-full px-4 py-3 bg-[#141720] border border-white/[0.1] rounded-xl
-           text-[#F8FAFC] placeholder-[#64748B] text-sm
+    @apply w-full px-4 py-3 bg-white border border-slate-200 rounded-xl
+           text-slate-900 placeholder-slate-400 text-sm
            transition-all duration-200
-           focus:outline-none focus:border-[#10B981]/60 focus:ring-2 focus:ring-[#10B981]/20 focus:bg-[#181C26];
+           focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:bg-white;
   }
 
   .section-container {

@@ -142,7 +142,7 @@ export interface Engagement {
 
       <div className="space-y-4">
         {/* Sub tabs */}
-        <div className="flex items-center justify-between border-b border-white/10 pb-3">
+        <div className="flex items-center justify-between border-b border-slate-200 pb-3">
           <div className="flex gap-2">
             {[
               { id: 'profile', label: '1. Creator Profile & Portfolio' },
@@ -154,8 +154,8 @@ export interface Engagement {
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   activeTab === tab.id
-                    ? 'bg-violet-600 text-white'
-                    : 'text-gray-400 hover:text-white bg-white/5'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900 bg-slate-100'
                 }`}
               >
                 {tab.label}
@@ -167,7 +167,7 @@ export interface Engagement {
             size="sm"
             variant="ghost"
             onClick={() => handleCopy(currentCode)}
-            leftIcon={copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+            leftIcon={copied ? <Check className="w-3.5 h-3.5 text-blue-600" /> : <Copy className="w-3.5 h-3.5" />}
             className="text-xs"
           >
             {copied ? 'Copied' : 'Copy Schema'}
@@ -175,12 +175,12 @@ export interface Engagement {
         </div>
 
         {/* Code Viewer */}
-        <div className="rounded-xl border border-white/10 bg-midnight-950 p-4 overflow-x-auto max-h-[380px] font-mono text-xs text-violet-200 leading-relaxed scrollbar-thin">
+        <div className="rounded-xl border border-slate-800 bg-slate-900 p-4 overflow-x-auto max-h-[380px] font-mono text-xs text-blue-200 leading-relaxed shadow-inner">
           <pre>{currentCode}</pre>
         </div>
 
-        <div className="flex items-center justify-between pt-2 border-t border-white/10 text-xs text-gray-400">
-          <span>Full markdown reference also saved in <code className="text-white">DATA_MODEL.md</code>.</span>
+        <div className="flex items-center justify-between pt-2 border-t border-slate-200 text-xs text-slate-500">
+          <span>Full markdown reference also saved in <code className="text-slate-800 font-semibold">DATA_MODEL.md</code>.</span>
           <Button variant="secondary" size="sm" onClick={onClose}>
             Close
           </Button>

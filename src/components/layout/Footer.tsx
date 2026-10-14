@@ -40,19 +40,19 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-[#090A12] border-t border-white/[0.08] text-gray-400 text-xs">
+      <footer className="bg-slate-50 border-t border-slate-200 text-slate-500 text-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Top 4-Column Directory Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             {Object.entries(fiverrFooterLinks).map(([title, links]) => (
               <div key={title} className="space-y-3">
-                <h4 className="text-white font-bold text-sm tracking-wide">{title}</h4>
+                <h4 className="text-slate-900 font-bold text-sm tracking-wide">{title}</h4>
                 <ul className="space-y-2.5">
                   {links.map((link) => (
                     <li key={link.label}>
                       <Link
                         to={link.href}
-                        className="text-gray-400 hover:text-white hover:underline underline-offset-4 transition-colors"
+                        className="text-slate-600 hover:text-[#2563EB] hover:underline underline-offset-4 transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -64,18 +64,18 @@ export default function Footer() {
           </div>
 
           {/* Brand & Accreditation Bottom Strip */}
-          <div className="pt-8 border-t border-white/[0.08] flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <Link to="/" className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-[#10B981] text-white flex items-center justify-center font-black">
+                <div className="w-7 h-7 rounded-lg bg-[#2563EB] text-white flex items-center justify-center font-black">
                   <Sparkles className="w-3.5 h-3.5 fill-current" />
                 </div>
-                <span className="text-lg font-black text-white font-sans">
-                  creovate<span className="text-[#10B981]">.</span>
+                <span className="text-lg font-black text-slate-900 font-sans">
+                  creovate<span className="text-[#2563EB]">.</span>
                 </span>
               </Link>
-              <span className="text-gray-500">|</span>
-              <span className="text-[11px] text-gray-400">
+              <span className="text-slate-300">|</span>
+              <span className="text-[11px] text-slate-500">
                 © 2026 Creovate AI Ltd. • Team Stack Attack
               </span>
             </div>
@@ -84,22 +84,22 @@ export default function Footer() {
               <button
                 type="button"
                 onClick={() => setIsFirebaseModalOpen(true)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/25 transition-all cursor-pointer font-bold"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-[#2563EB] border border-blue-200 transition-all cursor-pointer font-bold"
               >
                 <Database className="w-3.5 h-3.5" />
                 <span>Firebase Backend</span>
               </button>
 
-              <div className="flex items-center gap-1.5 text-emerald-400">
+              <div className="flex items-center gap-1.5 text-[#2563EB]">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Commercial IP Buyout Guaranteed</span>
               </div>
 
-              <div className="flex items-center gap-2 text-gray-400">
+              <div className="flex items-center gap-2 text-slate-400">
                 {[Globe, MessageSquare, Share2, Mail].map((Icon, i) => (
                   <span
                     key={i}
-                    className="w-7 h-7 rounded-lg bg-white/[0.04] hover:bg-white/10 hover:text-white border border-white/5 flex items-center justify-center cursor-pointer transition-colors"
+                    className="w-7 h-7 rounded-lg bg-white hover:bg-blue-50 hover:text-[#2563EB] border border-slate-200 shadow-sm flex items-center justify-center cursor-pointer transition-colors"
                   >
                     <Icon className="w-3.5 h-3.5" />
                   </span>

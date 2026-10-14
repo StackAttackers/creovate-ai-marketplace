@@ -272,7 +272,7 @@ export default function CreatorDashboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-midnight-900 pt-24 pb-20 text-white">
+    <div className="min-h-screen bg-white pt-24 pb-20 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -282,16 +282,16 @@ export default function CreatorDashboardPage() {
               name={user?.displayName || initialCreator.displayName}
               size="lg"
               shape="rounded"
-              className="border-2 border-violet-500/40"
+              className="border-2 border-blue-500/40"
             />
             <div>
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-400 mb-1">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#2563EB] mb-1">
                 <Sparkles className="w-3.5 h-3.5" /> Creator Studio Workspace
               </div>
-              <h1 className="text-2xl sm:text-3xl font-black text-white">
+              <h1 className="text-2xl sm:text-3xl font-black text-slate-900">
                 {user?.displayName || initialCreator.displayName}
               </h1>
-              <p className="text-xs sm:text-sm text-gray-400">
+              <p className="text-xs sm:text-sm text-slate-500">
                 {initialCreator.headline} • Provenance Verified
               </p>
             </div>
@@ -302,7 +302,7 @@ export default function CreatorDashboardPage() {
               variant="secondary"
               size="sm"
               onClick={() => setActiveTab('verification')}
-              leftIcon={<Award className="w-4 h-4 text-emerald-400" />}
+              leftIcon={<Award className="w-4 h-4 text-[#2563EB]" />}
             >
               Trust Center
             </Button>
@@ -318,7 +318,7 @@ export default function CreatorDashboardPage() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="border-b border-white/10 mb-8 flex gap-4 sm:gap-6 text-xs sm:text-sm overflow-x-auto pb-1 scrollbar-none">
+        <div className="border-b border-slate-200 mb-8 flex gap-4 sm:gap-6 text-xs sm:text-sm overflow-x-auto pb-1 scrollbar-none">
           {[
             { id: 'overview', label: 'Overview' },
             { id: 'engagements', label: `Active Deliveries (${engagements.length})` },
@@ -332,14 +332,14 @@ export default function CreatorDashboardPage() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
               className={`pb-3 font-semibold transition-all whitespace-nowrap relative ${
-                activeTab === tab.id ? 'text-violet-400' : 'text-gray-400 hover:text-white'
+                activeTab === tab.id ? 'text-[#2563EB]' : 'text-slate-500 hover:text-slate-900'
               }`}
             >
               {tab.label}
               {activeTab === tab.id && (
                 <motion.div
                   layoutId="creatorTabUnderline"
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-violet-500 shadow-sm shadow-violet-500/50"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#2563EB] shadow-sm shadow-blue-500/50"
                 />
               )}
             </button>
@@ -350,40 +350,40 @@ export default function CreatorDashboardPage() {
         {activeTab === 'overview' && (
           <div className="space-y-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="rounded-2xl border border-white/[0.08] bg-midnight-800/60 p-5 backdrop-blur-xl">
-                <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 block mb-1">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 shadow-sm">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block mb-1">
                   Trust &amp; Verification Score
                 </span>
-                <span className="text-3xl font-black text-emerald-400">99%</span>
-                <div className="mt-2 text-xs text-emerald-300 flex items-center gap-1 font-medium">
+                <span className="text-3xl font-black text-[#2563EB]">99%</span>
+                <div className="mt-2 text-xs text-blue-700 flex items-center gap-1 font-medium">
                   <ShieldCheck className="w-3.5 h-3.5" /> Elite Pro Verified Tier
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-white/[0.08] bg-midnight-800/60 p-5 backdrop-blur-xl">
-                <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 block mb-1">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 shadow-sm">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block mb-1">
                   Active Brand Contracts
                 </span>
-                <span className="text-3xl font-black text-white">{engagements.length}</span>
-                <div className="mt-2 text-xs text-violet-300">Live milestone deliveries</div>
+                <span className="text-3xl font-black text-slate-900">{engagements.length}</span>
+                <div className="mt-2 text-xs text-blue-600">Live milestone deliveries</div>
               </div>
 
-              <div className="rounded-2xl border border-white/[0.08] bg-midnight-800/60 p-5 backdrop-blur-xl">
-                <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 block mb-1">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 shadow-sm">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block mb-1">
                   Brand Invitations
                 </span>
-                <span className="text-3xl font-black text-white">{invitations.length}</span>
-                <div className="mt-2 text-xs text-amber-300">Direct commissioning requests</div>
+                <span className="text-3xl font-black text-slate-900">{invitations.length}</span>
+                <div className="mt-2 text-xs text-amber-700">Direct commissioning requests</div>
               </div>
 
-              <div className="rounded-2xl border border-white/[0.08] bg-midnight-800/60 p-5 backdrop-blur-xl">
-                <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 block mb-1">
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-5 shadow-sm">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 block mb-1">
                   Indicative Commercial Rates (₹)
                 </span>
-                <span className="text-xl font-black text-white">
+                <span className="text-xl font-black text-slate-900">
                   {formatPriceRange(minPrice, maxPrice)}
                 </span>
-                <div className="mt-2 text-xs text-gray-400">In Indian Rupees (₹ INR)</div>
+                <div className="mt-2 text-xs text-slate-500">In Indian Rupees (₹ INR)</div>
               </div>
             </div>
 

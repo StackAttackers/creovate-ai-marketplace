@@ -146,27 +146,27 @@ export default function MatchingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-midnight-900 pt-24 pb-20 text-white">
+    <div className="min-h-screen bg-white pt-24 pb-20 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-1 text-xs font-semibold text-violet-300 mb-3">
-            <Sparkles className="w-4 h-4" /> AI Creator Compatibility Engine
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1 text-xs font-semibold text-blue-700 mb-3 shadow-sm">
+            <Sparkles className="w-4 h-4 text-[#2563EB]" /> AI Creator Compatibility Engine
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-3">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mb-3">
             Find Your Perfect AI Creator Match
           </h1>
-          <p className="text-gray-400 text-sm sm:text-base">
+          <p className="text-slate-600 text-sm sm:text-base">
             Our deterministic multi-vector matching engine scores creators across skills, category,
             rupee budget fit, availability, and stylistic alignment.
           </p>
         </div>
 
         {/* Preset Campaign Templates */}
-        <div className="mb-8 rounded-2xl border border-white/5 bg-midnight-800/40 p-4 backdrop-blur-xl">
+        <div className="mb-8 rounded-2xl border border-slate-200 bg-slate-50/80 p-4 shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <span className="text-xs font-semibold uppercase tracking-wider text-gray-400 flex items-center gap-2">
-              <Zap className="w-3.5 h-3.5 text-amber-400" /> Try Sample Campaign Briefs:
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-600 flex items-center gap-2">
+              <Zap className="w-3.5 h-3.5 text-amber-500" /> Try Sample Campaign Briefs:
             </span>
             <div className="flex flex-wrap gap-2">
               {[
@@ -177,7 +177,7 @@ export default function MatchingPage() {
                 <button
                   key={label}
                   onClick={() => loadPreset(idx)}
-                  className="rounded-xl border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-gray-300 hover:border-violet-500/40 hover:bg-violet-600/20 hover:text-white transition-all"
+                  className="rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 hover:border-blue-400 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm"
                 >
                   {label}
                 </button>
@@ -189,12 +189,12 @@ export default function MatchingPage() {
         {/* Layout: Brief Form on left, Results or Animation on right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Brief Input Column (5 cols) */}
-          <div className="lg:col-span-5 rounded-3xl border border-white/[0.08] bg-midnight-800/80 p-6 backdrop-blur-2xl shadow-xl space-y-4">
-            <div className="flex items-center justify-between pb-3 border-b border-white/10">
-              <h3 className="text-base font-bold text-white flex items-center gap-2">
-                <Target className="w-4 h-4 text-violet-400" /> Campaign Specification
+          <div className="lg:col-span-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+              <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
+                <Target className="w-4 h-4 text-[#2563EB]" /> Campaign Specification
               </h3>
-              <span className="text-xs text-gray-400 font-mono">INR (₹) Enabled</span>
+              <span className="text-xs text-slate-500 font-mono">INR (₹) Enabled</span>
             </div>
 
             <Input
@@ -221,21 +221,21 @@ export default function MatchingPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">
                 Brief Description
               </label>
               <textarea
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 rows={3}
-                className="w-full rounded-xl border border-white/10 bg-white/[0.04] p-3 text-xs sm:text-sm text-white placeholder-gray-500 focus:border-violet-500/50 focus:outline-none focus:ring-2 focus:ring-violet-500/20"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:border-[#2563EB] focus:outline-none focus:ring-2 focus:ring-blue-100"
                 placeholder="Describe your campaign goals, deliverables, and vibe..."
               />
             </div>
 
             {/* Required Skills Tag Input */}
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">
                 Required Skills & Tools (Press Enter to add)
               </label>
               <input
@@ -244,19 +244,19 @@ export default function MatchingPage() {
                 onChange={(e) => setNewSkillInput(e.target.value)}
                 onKeyDown={handleAddSkill}
                 placeholder="Type skill & press Enter..."
-                className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:border-violet-500/50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 mb-2"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2 text-xs text-slate-900 placeholder-slate-400 focus:border-[#2563EB] focus:outline-none focus:ring-2 focus:ring-blue-100 mb-2"
               />
               <div className="flex flex-wrap gap-1.5">
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="inline-flex items-center gap-1.5 rounded-lg bg-violet-600/20 border border-violet-500/30 px-2.5 py-1 text-xs font-medium text-violet-300"
+                    className="inline-flex items-center gap-1.5 rounded-lg bg-blue-50 border border-blue-200 px-2.5 py-1 text-xs font-medium text-blue-700"
                   >
                     {skill}
                     <button
                       type="button"
                       onClick={() => handleRemoveSkill(skill)}
-                      className="hover:text-rose-400 text-gray-400 text-xs font-bold"
+                      className="hover:text-rose-600 text-slate-400 text-xs font-bold"
                     >
                       ×
                     </button>
@@ -290,7 +290,7 @@ export default function MatchingPage() {
 
             <Button
               variant="primary"
-              className="w-full py-3.5 text-base shadow-xl shadow-violet-600/30"
+              className="w-full py-3.5 text-base shadow-xl shadow-blue-500/25 bg-[#2563EB] hover:bg-[#1D4ED8]"
               onClick={handleRunMatching}
               isLoading={isMatching}
               leftIcon={<Sparkles className="w-5 h-5" />}
@@ -303,16 +303,16 @@ export default function MatchingPage() {
           <div className="lg:col-span-7">
             {/* Loading / Matching Simulation State */}
             {isMatching && (
-              <div className="rounded-3xl border border-white/10 bg-midnight-800/80 p-8 backdrop-blur-2xl shadow-xl text-center space-y-6">
+              <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8 shadow-sm text-center space-y-6">
                 <div className="relative mx-auto flex h-20 w-20 items-center justify-center">
-                  <div className="absolute inset-0 rounded-full border-4 border-violet-500/20 animate-ping" />
-                  <div className="h-16 w-16 rounded-full border-4 border-violet-500 border-t-transparent animate-spin" />
-                  <Sparkles className="absolute w-8 h-8 text-violet-400" />
+                  <div className="absolute inset-0 rounded-full border-4 border-blue-500/20 animate-ping" />
+                  <div className="h-16 w-16 rounded-full border-4 border-[#2563EB] border-t-transparent animate-spin" />
+                  <Sparkles className="absolute w-8 h-8 text-[#2563EB]" />
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Analyzing Creator Graph</h3>
-                  <p className="text-sm text-violet-300 font-mono min-h-[1.5rem]">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">Analyzing Creator Graph</h3>
+                  <p className="text-sm text-blue-700 font-mono min-h-[1.5rem]">
                     {matchingSteps[matchStep]}
                   </p>
                 </div>
@@ -323,7 +323,7 @@ export default function MatchingPage() {
                     <div
                       key={i}
                       className={`h-2 rounded-full transition-all duration-300 ${
-                        i <= matchStep ? 'w-8 bg-violet-500' : 'w-2 bg-white/10'
+                        i <= matchStep ? 'w-8 bg-[#2563EB]' : 'w-2 bg-slate-200'
                       }`}
                     />
                   ))}
@@ -334,17 +334,17 @@ export default function MatchingPage() {
             {/* Results Ready */}
             {!isMatching && results && (
               <div className="space-y-4">
-                <div className="flex items-center justify-between pb-2 border-b border-white/10">
+                <div className="flex items-center justify-between pb-2 border-b border-slate-200">
                   <div>
-                    <h3 className="text-lg font-bold text-white">Top Creator Matches</h3>
-                    <p className="text-xs text-gray-400">
+                    <h3 className="text-lg font-bold text-slate-900">Top Creator Matches</h3>
+                    <p className="text-xs text-slate-500">
                       Ranked by multi-factor score: skills (30), category (25), budget (20), timeline
                       (15), style (10).
                     </p>
                   </div>
                   <button
                     onClick={() => setResults(null)}
-                    className="text-xs text-gray-400 hover:text-white flex items-center gap-1"
+                    className="text-xs text-slate-500 hover:text-slate-900 flex items-center gap-1"
                   >
                     <RotateCcw className="w-3.5 h-3.5" /> Reset
                   </button>
@@ -365,45 +365,45 @@ export default function MatchingPage() {
 
             {/* Default Initial State before Run */}
             {!isMatching && !results && (
-              <div className="rounded-3xl border border-white/5 bg-midnight-800/40 p-10 backdrop-blur-xl text-center space-y-6">
-                <div className="inline-flex p-4 rounded-3xl bg-violet-600/10 border border-violet-500/20 text-violet-400">
+              <div className="rounded-3xl border border-slate-200 bg-slate-50/70 p-10 text-center space-y-6 shadow-sm">
+                <div className="inline-flex p-4 rounded-3xl bg-blue-50 border border-blue-200 text-[#2563EB]">
                   <Sparkles className="w-10 h-10" />
                 </div>
                 <div className="max-w-md mx-auto">
-                  <h3 className="text-xl font-bold text-white mb-2">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">
                     Transparent, Multi-Vector AI Matching
                   </h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     Adjust the brief parameters on the left or select a sample preset, then click{' '}
-                    <strong className="text-white">"Compute AI Matches"</strong> to calculate
+                    <strong className="text-slate-900">"Compute AI Matches"</strong> to calculate
                     instant compatibility scores for every creator in our Indian talent network.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left pt-4 border-t border-white/5">
-                  <div className="bg-white/[0.02] p-3 rounded-xl border border-white/5">
-                    <span className="text-[10px] uppercase font-bold text-violet-400 block">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left pt-4 border-t border-slate-200">
+                  <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                    <span className="text-[10px] uppercase font-bold text-[#2563EB] block">
                       30% Weight
                     </span>
-                    <span className="text-xs font-semibold text-white">Skill Overlap</span>
+                    <span className="text-xs font-semibold text-slate-900">Skill Overlap</span>
                   </div>
-                  <div className="bg-white/[0.02] p-3 rounded-xl border border-white/5">
-                    <span className="text-[10px] uppercase font-bold text-violet-400 block">
+                  <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                    <span className="text-[10px] uppercase font-bold text-[#2563EB] block">
                       25% Weight
                     </span>
-                    <span className="text-xs font-semibold text-white">Domain Focus</span>
+                    <span className="text-xs font-semibold text-slate-900">Domain Focus</span>
                   </div>
-                  <div className="bg-white/[0.02] p-3 rounded-xl border border-white/5">
-                    <span className="text-[10px] uppercase font-bold text-violet-400 block">
+                  <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                    <span className="text-[10px] uppercase font-bold text-[#2563EB] block">
                       20% Weight
                     </span>
-                    <span className="text-xs font-semibold text-white">Budget (INR)</span>
+                    <span className="text-xs font-semibold text-slate-900">Budget (INR)</span>
                   </div>
-                  <div className="bg-white/[0.02] p-3 rounded-xl border border-white/5">
-                    <span className="text-[10px] uppercase font-bold text-violet-400 block">
+                  <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+                    <span className="text-[10px] uppercase font-bold text-[#2563EB] block">
                       25% Weight
                     </span>
-                    <span className="text-xs font-semibold text-white">Style & Schedule</span>
+                    <span className="text-xs font-semibold text-slate-900">Style & Schedule</span>
                   </div>
                 </div>
               </div>

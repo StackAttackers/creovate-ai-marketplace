@@ -112,24 +112,24 @@ export function BrandRequirementMatcherModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-900/40 backdrop-blur-sm overflow-y-auto">
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.96 }}
-        className="relative w-full max-w-3xl rounded-3xl border border-white/10 bg-[#12151C] shadow-2xl overflow-hidden my-8"
+        className="relative w-full max-w-3xl rounded-3xl border border-slate-200 bg-white shadow-2xl overflow-hidden my-8 text-slate-900"
       >
         {/* Header Ribbon */}
-        <div className="relative px-6 py-5 border-b border-white/10 bg-[#181C26] flex items-center justify-between">
+        <div className="relative px-6 py-5 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#10B981]/20 border border-[#10B981]/30 flex items-center justify-center text-[#10B981]">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
               <Building2 className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-white">
+              <h2 className="text-lg font-bold text-slate-900">
                 {step === 'results' ? 'AI Matched Creators & Agencies' : 'Brand Project Intake & AI Matcher'}
               </h2>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-slate-500">
                 {step === 'results'
                   ? `Ranked recommendations for ${brandName || 'your campaign'} based on skill fit & budget`
                   : 'Define your campaign requirements to receive instant, verified AI creator suggestions'}
@@ -139,7 +139,7 @@ export function BrandRequirementMatcherModal({
 
           <button
             onClick={onClose}
-            className="rounded-full bg-white/5 hover:bg-white/10 p-2 text-gray-400 hover:text-white transition-colors"
+            className="rounded-full bg-slate-100 hover:bg-slate-200 p-2 text-slate-500 hover:text-slate-900 transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -150,7 +150,7 @@ export function BrandRequirementMatcherModal({
           <form onSubmit={handleRunAiMatching} className="p-6 sm:p-8 space-y-6 max-h-[75vh] overflow-y-auto">
             {/* Target Partner Selection */}
             <div>
-              <label className="block text-xs font-semibold text-gray-300 mb-2">
+              <label className="block text-xs font-semibold text-slate-700 mb-2">
                 What type of AI creative partner are you looking to commission?
               </label>
               <div className="grid grid-cols-3 gap-3">
@@ -165,8 +165,8 @@ export function BrandRequirementMatcherModal({
                     onClick={() => setTargetType(item.id as any)}
                     className={`py-2 px-3 rounded-xl border text-xs font-semibold transition-all ${
                       targetType === item.id
-                        ? 'border-[#10B981] bg-[#10B981]/15 text-white shadow-md'
-                        : 'border-white/10 bg-[#0B0D12] text-gray-400 hover:text-white'
+                        ? 'border-blue-600 bg-blue-50 text-blue-700 shadow-sm'
+                        : 'border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100'
                     }`}
                   >
                     {item.label}
@@ -178,7 +178,7 @@ export function BrandRequirementMatcherModal({
             {/* Basic Info */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                   Brand or Company Name *
                 </label>
                 <input
@@ -187,18 +187,18 @@ export function BrandRequirementMatcherModal({
                   value={brandName}
                   onChange={(e) => setBrandName(e.target.value)}
                   placeholder="e.g. StyleVerse India, BoAt, Zepto"
-                  className="w-full rounded-xl border border-white/10 bg-[#0B0D12] px-3.5 py-2.5 text-xs text-white placeholder-gray-500 focus:border-[#10B981] focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:outline-none shadow-xs"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                   Creative Discipline / Category *
                 </label>
                 <select
                   value={category}
                   onChange={(e) => setCategory(e.target.value as any)}
-                  className="w-full rounded-xl border border-white/10 bg-[#0B0D12] px-3.5 py-2.5 text-xs text-white focus:border-[#10B981] focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-900 focus:border-blue-600 focus:outline-none shadow-xs"
                 >
                   {CATEGORIES.map((cat) => (
                     <option key={cat} value={cat}>
@@ -211,7 +211,7 @@ export function BrandRequirementMatcherModal({
 
             {/* Project Title */}
             <div>
-              <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                 Campaign / Project Title *
               </label>
               <input
@@ -220,13 +220,13 @@ export function BrandRequirementMatcherModal({
                 value={projectTitle}
                 onChange={(e) => setProjectTitle(e.target.value)}
                 placeholder="e.g. 30s High-End AI Video Commercial for Festive Product Launch"
-                className="w-full rounded-xl border border-white/10 bg-[#0B0D12] px-3.5 py-2.5 text-xs text-white placeholder-gray-500 focus:border-[#10B981] focus:outline-none"
+                className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:outline-none shadow-xs"
               />
             </div>
 
             {/* Description */}
             <div>
-              <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                 Brief Description &amp; Visual Requirements *
               </label>
               <textarea
@@ -235,13 +235,13 @@ export function BrandRequirementMatcherModal({
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Detail what visual mood, character style, storyline, and final deliverables you require..."
-                className="w-full rounded-xl border border-white/10 bg-[#0B0D12] p-3 text-xs text-white placeholder-gray-500 focus:border-[#10B981] focus:outline-none resize-none leading-relaxed"
+                className="w-full rounded-xl border border-slate-200 bg-white p-3 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:outline-none resize-none leading-relaxed shadow-xs"
               />
             </div>
 
             {/* Preferred Tools & Pipeline */}
             <div>
-              <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                 Preferred AI Tools or Tech (Optional)
               </label>
               <input
@@ -249,14 +249,14 @@ export function BrandRequirementMatcherModal({
                 value={preferredTools}
                 onChange={(e) => setPreferredTools(e.target.value)}
                 placeholder="e.g. Runway Gen-3, Midjourney v6, Topaz Video AI, Blender"
-                className="w-full rounded-xl border border-white/10 bg-[#0B0D12] px-3.5 py-2.5 text-xs text-white placeholder-gray-500 focus:border-[#10B981] focus:outline-none"
+                className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:outline-none shadow-xs"
               />
             </div>
 
             {/* Budget (₹ INR) & Timeline */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               <div>
-                <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                   Min Budget (₹ INR)
                 </label>
                 <input
@@ -265,12 +265,12 @@ export function BrandRequirementMatcherModal({
                   min="20000"
                   value={budgetMin}
                   onChange={(e) => setBudgetMin(Number(e.target.value))}
-                  className="w-full rounded-xl border border-white/10 bg-[#0B0D12] px-3.5 py-2.5 text-xs font-mono font-bold text-white focus:border-[#10B981] focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-mono font-bold text-slate-900 focus:border-blue-600 focus:outline-none shadow-xs"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                   Max Budget (₹ INR)
                 </label>
                 <input
@@ -279,18 +279,18 @@ export function BrandRequirementMatcherModal({
                   min="30000"
                   value={budgetMax}
                   onChange={(e) => setBudgetMax(Number(e.target.value))}
-                  className="w-full rounded-xl border border-white/10 bg-[#0B0D12] px-3.5 py-2.5 text-xs font-mono font-bold text-white focus:border-[#10B981] focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-xs font-mono font-bold text-slate-900 focus:border-blue-600 focus:outline-none shadow-xs"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                   Target Timeline
                 </label>
                 <select
                   value={deadline}
                   onChange={(e) => setDeadline(e.target.value)}
-                  className="w-full rounded-xl border border-white/10 bg-[#0B0D12] px-3.5 py-2.5 text-xs text-white focus:border-[#10B981] focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-900 focus:border-blue-600 focus:outline-none shadow-xs"
                 >
                   <option value="Express 48 Hours">Express 48 Hours</option>
                   <option value="Within 1 week">Within 1 week</option>
@@ -301,9 +301,9 @@ export function BrandRequirementMatcherModal({
             </div>
 
             {/* Modal Actions */}
-            <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
-              <span className="text-[11px] text-gray-400 flex items-center gap-1.5">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="pt-4 border-t border-slate-200 flex items-center justify-between gap-3">
+              <span className="text-[11px] text-slate-500 flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
                 <span>100% Commercial IP transfer guarantee included</span>
               </span>
 
@@ -312,7 +312,7 @@ export function BrandRequirementMatcherModal({
                 variant="primary"
                 disabled={!brandName.trim() || !projectTitle.trim()}
                 leftIcon={<Zap className="w-4 h-4" />}
-                className="shadow-lg shadow-[#10B981]/30 text-xs font-bold px-6 py-2.5"
+                className="shadow-md shadow-blue-500/20 text-xs font-bold px-6 py-2.5"
               >
                 Find Matching Creators &amp; Agencies (AI)
               </Button>
@@ -324,14 +324,14 @@ export function BrandRequirementMatcherModal({
         {step === 'loading' && (
           <div className="p-16 text-center space-y-5">
             <div className="relative w-16 h-16 mx-auto">
-              <div className="absolute inset-0 rounded-full border-4 border-emerald-500/20 animate-ping" />
-              <div className="w-16 h-16 rounded-full border-4 border-emerald-500 border-t-transparent animate-spin" />
-              <Sparkles className="absolute inset-0 m-auto w-6 h-6 text-emerald-400" />
+              <div className="absolute inset-0 rounded-full border-4 border-blue-200 animate-ping" />
+              <div className="w-16 h-16 rounded-full border-4 border-blue-600 border-t-transparent animate-spin" />
+              <Sparkles className="absolute inset-0 m-auto w-6 h-6 text-blue-600" />
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-white">Analyzing Requirements &amp; Running AI Match...</h3>
-              <p className="text-xs text-gray-400 mt-1 max-w-sm mx-auto">
+              <h3 className="text-lg font-bold text-slate-900">Analyzing Requirements &amp; Running AI Match...</h3>
+              <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto">
                 Comparing creative category, tool stacks, rate feasibility, and verified provenance logs.
               </p>
             </div>
@@ -342,14 +342,14 @@ export function BrandRequirementMatcherModal({
         {step === 'results' && (
           <div className="p-6 sm:p-8 space-y-6 max-h-[75vh] overflow-y-auto">
             {/* Top Match Summary Header */}
-            <div className="p-4 rounded-2xl bg-[#0B0D12] border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 block">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 block">
                   Campaign Registered
                 </span>
-                <h3 className="text-sm font-bold text-white">{projectTitle}</h3>
-                <p className="text-xs text-gray-400">
-                  Budget: <strong className="text-white font-mono">{formatPriceRange(budgetMin, budgetMax)}</strong> • {category}
+                <h3 className="text-sm font-bold text-slate-900">{projectTitle}</h3>
+                <p className="text-xs text-slate-500">
+                  Budget: <strong className="text-slate-900 font-mono">{formatPriceRange(budgetMin, budgetMax)}</strong> • {category}
                 </p>
               </div>
 
@@ -359,7 +359,7 @@ export function BrandRequirementMatcherModal({
                 </Button>
                 <a
                   href="/brand-dashboard"
-                  className="px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-semibold text-gray-300 border border-white/10"
+                  className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-xs font-semibold text-slate-700 border border-slate-200 shadow-xs"
                 >
                   View in Dashboard
                 </a>
@@ -368,14 +368,14 @@ export function BrandRequirementMatcherModal({
 
             {/* AI Recommendations List */}
             <div className="space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-gray-300 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-emerald-400" /> AI Recommended Creators for Your Project
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-blue-600" /> AI Recommended Creators for Your Project
               </h4>
 
               {matchedResults.map((result, idx) => (
                 <div
                   key={result.creatorId}
-                  className="rounded-2xl border border-white/10 bg-[#0B0D12] p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-emerald-500/40 transition-all shadow-md"
+                  className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 hover:border-blue-400 transition-all shadow-sm"
                 >
                   <div className="flex items-start gap-4">
                     <SafeAvatar
@@ -383,28 +383,28 @@ export function BrandRequirementMatcherModal({
                       name={result.creatorName}
                       size="lg"
                       shape="rounded"
-                      className="border-2 border-emerald-500/30 shrink-0"
+                      className="border-2 border-blue-200 shrink-0"
                     />
 
                     <div>
                       <div className="flex flex-wrap items-center gap-2 mb-1">
-                        <span className="w-5 h-5 rounded-full bg-white/10 text-white font-mono text-[11px] font-bold flex items-center justify-center">
+                        <span className="w-5 h-5 rounded-full bg-slate-100 text-slate-700 font-mono text-[11px] font-bold flex items-center justify-center">
                           #{idx + 1}
                         </span>
-                        <h4 className="font-bold text-white text-sm">{result.creatorName}</h4>
-                        <span className="px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold">
+                        <h4 className="font-bold text-slate-900 text-sm">{result.creatorName}</h4>
+                        <span className="px-2 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-[10px] font-bold">
                           {result.score.overall}% Match
                         </span>
                       </div>
 
-                      <p className="text-xs text-gray-300 mb-2">{result.creatorHeadline}</p>
+                      <p className="text-xs text-slate-600 mb-2">{result.creatorHeadline}</p>
 
                       {/* Why AI Recommended */}
-                      <div className="rounded-xl bg-[#141720] border border-white/5 p-2.5 text-xs text-gray-300 space-y-1">
-                        <strong className="text-[10px] uppercase font-bold text-emerald-400 block">
+                      <div className="rounded-xl bg-slate-50 border border-slate-200 p-2.5 text-xs text-slate-700 space-y-1">
+                        <strong className="text-[10px] uppercase font-bold text-blue-700 block">
                           AI Compatibility Rationale:
                         </strong>
-                        <p className="text-[11px] text-gray-300 leading-snug">
+                        <p className="text-[11px] text-slate-600 leading-snug">
                           {result.matchReasons && result.matchReasons[0]
                             ? result.matchReasons[0]
                             : `Strong category alignment in ${category} with verified tools and rates starting at ${formatCurrency(result.creatorPriceRange?.min || 30000)}.`}
@@ -414,10 +414,10 @@ export function BrandRequirementMatcherModal({
                   </div>
 
                   {/* Actions Column */}
-                  <div className="flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center gap-2 shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-white/5">
+                  <div className="flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center gap-2 shrink-0 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100">
                     <div className="text-left md:text-right">
-                      <span className="text-[10px] text-gray-400 block uppercase">Starting Rate</span>
-                      <strong className="text-sm font-mono text-white">
+                      <span className="text-[10px] text-slate-400 block uppercase">Starting Rate</span>
+                      <strong className="text-sm font-mono text-slate-900">
                         {formatCurrency(result.creatorPriceRange?.min || 35000)}
                       </strong>
                     </div>
@@ -427,7 +427,7 @@ export function BrandRequirementMatcherModal({
                         href={`/creators/${result.creatorId}`}
                         target="_blank"
                         rel="noreferrer"
-                        className="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-semibold text-gray-300 hover:text-white border border-white/10 transition-colors"
+                        className="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-700 border border-slate-200 transition-colors"
                       >
                         View Gig
                       </a>
@@ -440,7 +440,7 @@ export function BrandRequirementMatcherModal({
                             window.location.href = `/creators/${result.creatorId}`;
                           }
                         }}
-                        className="px-4 py-1.5 rounded-xl bg-[#10B981] hover:bg-[#059669] text-xs font-bold text-white transition-all shadow-md shadow-[#10B981]/25 flex items-center gap-1.5"
+                        className="px-4 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-xs font-bold text-white transition-all shadow-md shadow-blue-500/20 flex items-center gap-1.5"
                       >
                         <Send className="w-3 h-3" />
                         <span>Invite</span>
@@ -452,11 +452,11 @@ export function BrandRequirementMatcherModal({
             </div>
 
             {/* Footer Done Button */}
-            <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-              <span className="text-xs text-gray-400">
+            <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
+              <span className="text-xs text-slate-500">
                 You can review more candidates anytime in the Discover marketplace.
               </span>
-              <Button variant="primary" onClick={onClose} className="text-xs font-bold">
+              <Button variant="primary" onClick={onClose} className="text-xs font-bold shadow-md shadow-blue-500/20">
                 Done &amp; Explore Marketplace
               </Button>
             </div>

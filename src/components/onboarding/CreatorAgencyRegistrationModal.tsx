@@ -221,28 +221,28 @@ export function CreatorAgencyRegistrationModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-900/40 backdrop-blur-sm overflow-y-auto">
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.96 }}
-        className="relative w-full max-w-3xl rounded-3xl border border-white/10 bg-[#12151C] shadow-2xl overflow-hidden my-8"
+        className="relative w-full max-w-3xl rounded-3xl border border-slate-200 bg-white shadow-2xl overflow-hidden my-8 text-slate-900"
       >
         {/* Header Ribbon */}
-        <div className="relative px-6 py-5 border-b border-white/10 bg-[#181C26] flex items-center justify-between">
+        <div className="relative px-6 py-5 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#10B981]/20 border border-[#10B981]/30 flex items-center justify-center text-[#10B981]">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
               {role === 'agency' ? <Building2 className="w-5 h-5" /> : <Palette className="w-5 h-5" />}
             </div>
             <div>
-              <h2 className="text-lg font-bold text-white">
+              <h2 className="text-lg font-bold text-slate-900">
                 {isSuccess
                   ? 'Registration Complete!'
                   : role === 'agency'
                   ? 'Register as an AI Creative Agency'
                   : 'Join as an AI Content Creator'}
               </h2>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-slate-500">
                 {isSuccess
                   ? 'Your profile & services are now live on Creovate AI'
                   : 'Showcase your AI tools, social channels, and start receiving brand campaigns in ₹ INR'}
@@ -252,7 +252,7 @@ export function CreatorAgencyRegistrationModal({
 
           <button
             onClick={onClose}
-            className="rounded-full bg-white/5 hover:bg-white/10 p-2 text-gray-400 hover:text-white transition-colors"
+            className="rounded-full bg-slate-100 hover:bg-slate-200 p-2 text-slate-500 hover:text-slate-900 transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -261,38 +261,38 @@ export function CreatorAgencyRegistrationModal({
         {/* Success View */}
         {isSuccess ? (
           <div className="p-8 sm:p-12 text-center space-y-6">
-            <div className="w-20 h-20 rounded-full bg-emerald-500/20 border-2 border-emerald-500/40 text-emerald-400 mx-auto flex items-center justify-center shadow-xl shadow-emerald-500/10">
+            <div className="w-20 h-20 rounded-full bg-blue-50 border-2 border-blue-200 text-blue-600 mx-auto flex items-center justify-center shadow-lg shadow-blue-500/10">
               <CheckCircle2 className="w-10 h-10" />
             </div>
 
             <div>
-              <h3 className="text-2xl font-black text-white">Welcome to Creovate AI PRO!</h3>
-              <p className="text-sm text-gray-300 max-w-md mx-auto mt-2 leading-relaxed">
-                Congratulations, <strong className="text-white">{displayName}</strong>. Your{' '}
+              <h3 className="text-2xl font-black text-slate-900">Welcome to Creovate AI PRO!</h3>
+              <p className="text-sm text-slate-600 max-w-md mx-auto mt-2 leading-relaxed">
+                Congratulations, <strong className="text-slate-900">{displayName}</strong>. Your{' '}
                 {role === 'agency' ? 'agency studio' : 'creator profile'} has been verified with starting rates of{' '}
-                <strong className="text-emerald-400">{formatCurrency(minRate)}</strong>.
+                <strong className="text-blue-600">{formatCurrency(minRate)}</strong>.
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#0B0D12] border border-white/10 max-w-md mx-auto text-left text-xs space-y-2">
-              <div className="flex justify-between text-gray-400">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 max-w-md mx-auto text-left text-xs space-y-2">
+              <div className="flex justify-between text-slate-500">
                 <span>Account Role:</span>
-                <strong className="text-white uppercase">{role}</strong>
+                <strong className="text-slate-900 uppercase">{role}</strong>
               </div>
-              <div className="flex justify-between text-gray-400">
+              <div className="flex justify-between text-slate-500">
                 <span>Category:</span>
-                <strong className="text-white">{category}</strong>
+                <strong className="text-slate-900">{category}</strong>
               </div>
-              <div className="flex justify-between text-gray-400">
+              <div className="flex justify-between text-slate-500">
                 <span>Tools Listed:</span>
-                <strong className="text-white">{selectedTools.slice(0, 3).join(', ')}</strong>
+                <strong className="text-slate-900">{selectedTools.slice(0, 3).join(', ')}</strong>
               </div>
-              <div className="pt-2 border-t border-white/5 flex items-center justify-between text-[11px] text-[#34D399]">
+              <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[11px] text-blue-600">
                 <span className="flex items-center gap-1.5 font-medium">
-                  <Database className="w-3.5 h-3.5 text-[#10B981]" />
+                  <Database className="w-3.5 h-3.5 text-blue-600" />
                   Cloud Firestore Backend
                 </span>
-                <span className="font-mono text-[10px] text-gray-400">
+                <span className="font-mono text-[10px] text-slate-500">
                   {role === 'agency' ? 'agencies & creatorProfiles' : 'creatorProfiles'}
                 </span>
               </div>
@@ -301,14 +301,14 @@ export function CreatorAgencyRegistrationModal({
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
               <a
                 href={`/creators/${registeredCreatorId}`}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#10B981] hover:bg-[#059669] text-white text-xs font-bold transition-all shadow-lg shadow-[#10B981]/30 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all shadow-md shadow-blue-500/20 flex items-center justify-center gap-2"
               >
                 <span>View My Live Gig</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
               <button
                 onClick={onClose}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white text-xs font-semibold border border-white/10 transition-colors"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-900 text-xs font-semibold border border-slate-200 transition-colors"
               >
                 Close &amp; Explore Marketplace
               </button>
@@ -317,14 +317,14 @@ export function CreatorAgencyRegistrationModal({
         ) : (
           <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-6 max-h-[75vh] overflow-y-auto">
             {/* Role Switcher */}
-            <div className="grid grid-cols-2 gap-3 p-1 rounded-xl bg-[#0B0D12] border border-white/10">
+            <div className="grid grid-cols-2 gap-3 p-1 rounded-xl bg-slate-100 border border-slate-200">
               <button
                 type="button"
                 onClick={() => setRole('creator')}
                 className={`py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                   role === 'creator'
-                    ? 'bg-[#10B981] text-white shadow-md'
-                    : 'text-gray-400 hover:text-white'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 <Palette className="w-3.5 h-3.5" />
@@ -335,8 +335,8 @@ export function CreatorAgencyRegistrationModal({
                 onClick={() => setRole('agency')}
                 className={`py-2.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-2 ${
                   role === 'agency'
-                    ? 'bg-[#10B981] text-white shadow-md'
-                    : 'text-gray-400 hover:text-white'
+                    ? 'bg-blue-600 text-white shadow-sm'
+                    : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 <Building2 className="w-3.5 h-3.5" />
@@ -346,13 +346,13 @@ export function CreatorAgencyRegistrationModal({
 
             {/* 1. Identity & Specialty */}
             <div className="space-y-4">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5" /> Basic Information
+              <h3 className="text-xs font-bold uppercase tracking-wider text-blue-700 flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5 text-blue-600" /> Basic Information
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                     {role === 'agency' ? 'Agency / Studio Name' : 'Full Name or Artist Handle'} *
                   </label>
                   <input
@@ -361,18 +361,18 @@ export function CreatorAgencyRegistrationModal({
                     value={displayName}
                     onChange={(e) => setDisplayName(e.target.value)}
                     placeholder={role === 'agency' ? 'e.g. HyperMotion AI Studios' : 'e.g. Aryan Sharma'}
-                    className="w-full rounded-xl border border-white/10 bg-[#0B0D12] px-3.5 py-2.5 text-xs text-white placeholder-gray-500 focus:border-[#10B981] focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:outline-none shadow-xs"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                     Primary Creative Category *
                   </label>
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value as any)}
-                    className="w-full rounded-xl border border-white/10 bg-[#0B0D12] px-3.5 py-2.5 text-xs text-white focus:border-[#10B981] focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-900 focus:border-blue-600 focus:outline-none shadow-xs"
                   >
                     {CATEGORIES.map((cat) => (
                       <option key={cat} value={cat}>
@@ -384,7 +384,7 @@ export function CreatorAgencyRegistrationModal({
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                   Professional Headline / Gig Pitch *
                 </label>
                 <input
@@ -393,12 +393,12 @@ export function CreatorAgencyRegistrationModal({
                   value={headline}
                   onChange={(e) => setHeadline(e.target.value)}
                   placeholder="e.g. Cinematic Runway Gen-3 Director & Prompt Architect for Commercial Brands"
-                  className="w-full rounded-xl border border-white/10 bg-[#0B0D12] px-3.5 py-2.5 text-xs text-white placeholder-gray-500 focus:border-[#10B981] focus:outline-none"
+                  className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:outline-none shadow-xs"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                   Short Bio / Studio Vision
                 </label>
                 <textarea
@@ -406,18 +406,18 @@ export function CreatorAgencyRegistrationModal({
                   value={bio}
                   onChange={(e) => setBio(e.target.value)}
                   placeholder="Briefly describe your production workflow, turnaround times, and past client experience..."
-                  className="w-full rounded-xl border border-white/10 bg-[#0B0D12] p-3 text-xs text-white placeholder-gray-500 focus:border-[#10B981] focus:outline-none resize-none"
+                  className="w-full rounded-xl border border-slate-200 bg-white p-3 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:outline-none resize-none shadow-xs"
                 />
               </div>
             </div>
 
             {/* 2. Tools You Use to Make Videos */}
-            <div className="space-y-3 pt-3 border-t border-white/10">
+            <div className="space-y-3 pt-3 border-t border-slate-200">
               <div className="flex items-center justify-between">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
-                  <Wrench className="w-3.5 h-3.5" /> What Tools Do You Use to Make Videos / Art? *
+                <h3 className="text-xs font-bold uppercase tracking-wider text-blue-700 flex items-center gap-2">
+                  <Wrench className="w-3.5 h-3.5 text-blue-600" /> What Tools Do You Use to Make Videos / Art? *
                 </h3>
-                <span className="text-[11px] text-gray-400">Select all that apply</span>
+                <span className="text-[11px] text-slate-500">Select all that apply</span>
               </div>
 
               <div className="flex flex-wrap gap-2">
@@ -430,11 +430,11 @@ export function CreatorAgencyRegistrationModal({
                       onClick={() => toggleTool(tool)}
                       className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all flex items-center gap-1.5 ${
                         isSelected
-                          ? 'border-[#10B981] bg-[#10B981]/20 text-white'
-                          : 'border-white/10 bg-white/5 text-gray-400 hover:text-white hover:bg-white/10'
+                          ? 'border-blue-600 bg-blue-50 text-blue-700 shadow-xs'
+                          : 'border-slate-200 bg-slate-50 text-slate-600 hover:text-slate-900 hover:bg-slate-100'
                       }`}
                     >
-                      {isSelected && <Check className="w-3 h-3 text-[#10B981]" />}
+                      {isSelected && <Check className="w-3 h-3 text-blue-600" />}
                       <span>{tool}</span>
                     </button>
                   );
@@ -454,7 +454,7 @@ export function CreatorAgencyRegistrationModal({
                     }
                   }}
                   placeholder="Add other AI tools (e.g. Magnific, Krea, Kling)..."
-                  className="flex-1 rounded-xl border border-white/10 bg-[#0B0D12] px-3 py-2 text-xs text-white placeholder-gray-500 focus:border-[#10B981] focus:outline-none"
+                  className="flex-1 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:outline-none shadow-xs"
                 />
                 <Button
                   type="button"
@@ -469,67 +469,67 @@ export function CreatorAgencyRegistrationModal({
             </div>
 
             {/* 3. Social Media Handles */}
-            <div className="space-y-3 pt-3 border-t border-white/10">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
-                <Globe className="w-3.5 h-3.5" /> Social Media &amp; Portfolio Handles
+            <div className="space-y-3 pt-3 border-t border-slate-200">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-blue-700 flex items-center gap-2">
+                <Globe className="w-3.5 h-3.5 text-blue-600" /> Social Media &amp; Portfolio Handles
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="relative">
-                  <AtSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-pink-400" />
+                  <AtSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-pink-500" />
                   <input
                     type="text"
                     value={instagram}
                     onChange={(e) => setInstagram(e.target.value)}
                     placeholder="Instagram handle (@username)"
-                    className="w-full rounded-xl border border-white/10 bg-[#0B0D12] pl-9 pr-3 py-2 text-xs text-white placeholder-gray-500 focus:border-[#10B981] focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 bg-white pl-9 pr-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:outline-none shadow-xs"
                   />
                 </div>
 
                 <div className="relative">
-                  <Share2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-400" />
+                  <Share2 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-500" />
                   <input
                     type="text"
                     value={twitter}
                     onChange={(e) => setTwitter(e.target.value)}
                     placeholder="X / Twitter handle (@username)"
-                    className="w-full rounded-xl border border-white/10 bg-[#0B0D12] pl-9 pr-3 py-2 text-xs text-white placeholder-gray-500 focus:border-[#10B981] focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 bg-white pl-9 pr-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:outline-none shadow-xs"
                   />
                 </div>
 
                 <div className="relative">
-                  <Video className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-red-400" />
+                  <Video className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-red-500" />
                   <input
                     type="text"
                     value={youtube}
                     onChange={(e) => setYoutube(e.target.value)}
                     placeholder="YouTube / Vimeo showreel URL"
-                    className="w-full rounded-xl border border-white/10 bg-[#0B0D12] pl-9 pr-3 py-2 text-xs text-white placeholder-gray-500 focus:border-[#10B981] focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 bg-white pl-9 pr-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:outline-none shadow-xs"
                   />
                 </div>
 
                 <div className="relative">
-                  <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-400" />
+                  <Globe className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-600" />
                   <input
                     type="text"
                     value={portfolioUrl}
                     onChange={(e) => setPortfolioUrl(e.target.value)}
                     placeholder="Website or Behance portfolio link"
-                    className="w-full rounded-xl border border-white/10 bg-[#0B0D12] pl-9 pr-3 py-2 text-xs text-white placeholder-gray-500 focus:border-[#10B981] focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 bg-white pl-9 pr-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:border-blue-600 focus:outline-none shadow-xs"
                   />
                 </div>
               </div>
             </div>
 
             {/* 4. Rates & Pricing in Indian Rupees (₹ INR) */}
-            <div className="space-y-3 pt-3 border-t border-white/10">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
-                <DollarSign className="w-3.5 h-3.5" /> Indicative Rates (Indian Rupees ₹ INR)
+            <div className="space-y-3 pt-3 border-t border-slate-200">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-blue-700 flex items-center gap-2">
+                <DollarSign className="w-3.5 h-3.5 text-blue-600" /> Indicative Rates (Indian Rupees ₹ INR)
               </h3>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                     Starting Minimum Rate (₹ INR)
                   </label>
                   <input
@@ -538,15 +538,15 @@ export function CreatorAgencyRegistrationModal({
                     min="10000"
                     value={minRate}
                     onChange={(e) => setMinRate(Number(e.target.value))}
-                    className="w-full rounded-xl border border-white/10 bg-[#0B0D12] px-3.5 py-2 text-xs font-mono font-bold text-white focus:border-[#10B981] focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-mono font-bold text-slate-900 focus:border-blue-600 focus:outline-none shadow-xs"
                   />
-                  <span className="text-[10px] text-gray-400 mt-1 block">
+                  <span className="text-[10px] text-slate-500 mt-1 block">
                     Starting at {formatCurrency(minRate)}
                   </span>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-300 mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                     Full Campaign Retainer Max Rate (₹ INR)
                   </label>
                   <input
@@ -555,9 +555,9 @@ export function CreatorAgencyRegistrationModal({
                     min="20000"
                     value={maxRate}
                     onChange={(e) => setMaxRate(Number(e.target.value))}
-                    className="w-full rounded-xl border border-white/10 bg-[#0B0D12] px-3.5 py-2 text-xs font-mono font-bold text-white focus:border-[#10B981] focus:outline-none"
+                    className="w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-mono font-bold text-slate-900 focus:border-blue-600 focus:outline-none shadow-xs"
                   />
-                  <span className="text-[10px] text-gray-400 mt-1 block">
+                  <span className="text-[10px] text-slate-500 mt-1 block">
                     Up to {formatCurrency(maxRate)}
                   </span>
                 </div>
@@ -565,13 +565,13 @@ export function CreatorAgencyRegistrationModal({
             </div>
 
             {/* 5. Featured Portfolio Work */}
-            <div className="space-y-3 pt-3 border-t border-white/10">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+            <div className="space-y-3 pt-3 border-t border-slate-200">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-blue-700">
                 Featured Portfolio Artwork Preset
               </h3>
 
               <div>
-                <label className="block text-xs text-gray-400 mb-2">
+                <label className="block text-xs text-slate-500 mb-2">
                   Choose a style preset or input your own showcase media URL:
                 </label>
                 <div className="grid grid-cols-3 gap-3">
@@ -585,8 +585,8 @@ export function CreatorAgencyRegistrationModal({
                       }}
                       className={`relative rounded-xl overflow-hidden border-2 h-20 transition-all ${
                         portfolioImage === item.imageUrl
-                          ? 'border-[#10B981] shadow-lg'
-                          : 'border-white/10 opacity-60 hover:opacity-100'
+                          ? 'border-blue-600 shadow-md shadow-blue-500/20'
+                          : 'border-slate-200 opacity-70 hover:opacity-100'
                       }`}
                     >
                       <SafeImage
@@ -595,8 +595,8 @@ export function CreatorAgencyRegistrationModal({
                         containerClassName="w-full h-full pointer-events-none"
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-1 text-center">
-                        <span className="text-[9px] font-bold text-white line-clamp-2">{item.title}</span>
+                      <div className="absolute inset-0 bg-slate-900/30 flex items-center justify-center p-1 text-center">
+                        <span className="text-[9px] font-bold text-white line-clamp-2 drop-shadow-sm">{item.title}</span>
                       </div>
                     </button>
                   ))}
@@ -605,11 +605,11 @@ export function CreatorAgencyRegistrationModal({
             </div>
 
             {/* Modal Actions */}
-            <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+            <div className="pt-4 border-t border-slate-200 flex items-center justify-between gap-3">
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 text-xs font-medium text-gray-400 hover:text-white"
+                className="px-4 py-2 text-xs font-medium text-slate-500 hover:text-slate-900"
               >
                 Cancel
               </button>
@@ -619,7 +619,7 @@ export function CreatorAgencyRegistrationModal({
                 variant="primary"
                 disabled={isSubmitting || !displayName.trim()}
                 leftIcon={<Send className="w-4 h-4" />}
-                className="shadow-lg shadow-[#10B981]/25 text-xs font-bold px-6 py-2.5"
+                className="shadow-md shadow-blue-500/20 text-xs font-bold px-6 py-2.5"
               >
                 {isSubmitting
                   ? 'Publishing Profile...'

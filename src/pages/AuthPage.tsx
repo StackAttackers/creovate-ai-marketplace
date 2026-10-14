@@ -79,17 +79,17 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-midnight-900 pt-28 pb-20 flex items-center justify-center px-4 sm:px-6 text-white">
+    <div className="min-h-screen bg-slate-50 pt-28 pb-20 flex items-center justify-center px-4 sm:px-6 text-slate-900">
       <div className="w-full max-w-md">
         {/* Brand Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-3.5 py-1 text-xs font-semibold text-violet-300 mb-3">
-            <Sparkles className="w-3.5 h-3.5" /> Demo & Production Ready
+          <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-semibold text-blue-700 mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-blue-600" /> Demo &amp; Production Ready
           </div>
-          <h1 className="text-3xl font-black text-white">
+          <h1 className="text-3xl font-black text-slate-900">
             {mode === 'signin' ? 'Welcome Back' : 'Create an Account'}
           </h1>
-          <p className="text-sm text-gray-400 mt-1.5">
+          <p className="text-sm text-slate-500 mt-1.5">
             {mode === 'signin'
               ? 'Access your Creovate AI dashboard and collaborations'
               : 'Join the next generation of creative AI production'}
@@ -97,36 +97,36 @@ export default function AuthPage() {
         </div>
 
         {/* Quick Demo Access Bar */}
-        <div className="mb-6 rounded-2xl border border-violet-500/30 bg-violet-950/20 p-4 backdrop-blur-xl">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-violet-300 mb-2.5">
-            <Zap className="w-3.5 h-3.5 text-amber-400" /> 1-Click Instant Demo Access
+        <div className="mb-6 rounded-2xl border border-blue-200 bg-blue-50/80 p-4 shadow-sm">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-blue-800 mb-2.5">
+            <Zap className="w-3.5 h-3.5 text-amber-500" /> 1-Click Instant Demo Access
           </div>
           <div className="grid grid-cols-2 gap-2">
             <button
               onClick={() => handleDemoLogin('brand')}
-              className="rounded-xl border border-white/10 bg-white/5 p-2.5 text-left hover:border-violet-500/50 hover:bg-violet-600/20 transition-all text-xs"
+              className="rounded-xl border border-slate-200 bg-white p-2.5 text-left hover:border-blue-500 hover:bg-blue-50/50 transition-all text-xs shadow-xs"
             >
-              <div className="font-bold text-white flex items-center gap-1.5">
-                <Briefcase className="w-3.5 h-3.5 text-blue-400" /> As Brand
+              <div className="font-bold text-slate-900 flex items-center gap-1.5">
+                <Briefcase className="w-3.5 h-3.5 text-blue-600" /> As Brand
               </div>
-              <div className="text-[11px] text-gray-400 mt-0.5">Post briefs, shortlist</div>
+              <div className="text-[11px] text-slate-500 mt-0.5">Post briefs, shortlist</div>
             </button>
             <button
               onClick={() => handleDemoLogin('creator')}
-              className="rounded-xl border border-white/10 bg-white/5 p-2.5 text-left hover:border-violet-500/50 hover:bg-violet-600/20 transition-all text-xs"
+              className="rounded-xl border border-slate-200 bg-white p-2.5 text-left hover:border-blue-500 hover:bg-blue-50/50 transition-all text-xs shadow-xs"
             >
-              <div className="font-bold text-white flex items-center gap-1.5">
-                <User className="w-3.5 h-3.5 text-violet-400" /> As Creator
+              <div className="font-bold text-slate-900 flex items-center gap-1.5">
+                <User className="w-3.5 h-3.5 text-blue-600" /> As Creator
               </div>
-              <div className="text-[11px] text-gray-400 mt-0.5">Manage portfolio, invites</div>
+              <div className="text-[11px] text-slate-500 mt-0.5">Manage portfolio, invites</div>
             </button>
           </div>
         </div>
 
         {/* Card Form */}
-        <div className="rounded-3xl border border-white/[0.08] bg-midnight-800/80 p-6 sm:p-8 backdrop-blur-2xl shadow-2xl">
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xl">
           {/* Sign In vs Sign Up Toggle */}
-          <div className="grid grid-cols-2 p-1 rounded-xl bg-white/5 border border-white/5 mb-6">
+          <div className="grid grid-cols-2 p-1 rounded-xl bg-slate-100 border border-slate-200 mb-6">
             <button
               type="button"
               onClick={() => {
@@ -135,8 +135,8 @@ export default function AuthPage() {
               }}
               className={`py-2 text-xs font-bold rounded-lg transition-all ${
                 mode === 'signin'
-                  ? 'bg-violet-600 text-white shadow-md'
-                  : 'text-gray-400 hover:text-white'
+                  ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               Sign In
@@ -149,8 +149,8 @@ export default function AuthPage() {
               }}
               className={`py-2 text-xs font-bold rounded-lg transition-all ${
                 mode === 'signup'
-                  ? 'bg-violet-600 text-white shadow-md'
-                  : 'text-gray-400 hover:text-white'
+                  ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               Create Account
@@ -161,7 +161,7 @@ export default function AuthPage() {
             {/* If Sign Up: Select Role */}
             {mode === 'signup' && (
               <div className="space-y-2">
-                <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400">
+                <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500">
                   I want to join as:
                 </label>
                 <div className="grid grid-cols-2 gap-3">
@@ -170,13 +170,13 @@ export default function AuthPage() {
                     onClick={() => setRole('brand')}
                     className={`flex flex-col items-center justify-center p-3 rounded-xl border text-center transition-all ${
                       role === 'brand'
-                        ? 'border-violet-500 bg-violet-600/20 text-white shadow-md shadow-violet-600/20'
-                        : 'border-white/10 bg-white/[0.03] text-gray-400 hover:text-white'
+                        ? 'border-blue-600 bg-blue-50 text-blue-900 shadow-sm'
+                        : 'border-slate-200 bg-slate-50 text-slate-600 hover:border-slate-300'
                     }`}
                   >
-                    <Briefcase className="w-5 h-5 mb-1.5 text-blue-400" />
+                    <Briefcase className="w-5 h-5 mb-1.5 text-blue-600" />
                     <span className="text-xs font-bold">Brand / Agency</span>
-                    <span className="text-[10px] text-gray-400 mt-0.5">Hire AI Creators</span>
+                    <span className="text-[10px] text-slate-500 mt-0.5">Hire AI Creators</span>
                   </button>
 
                   <button
@@ -184,13 +184,13 @@ export default function AuthPage() {
                     onClick={() => setRole('creator')}
                     className={`flex flex-col items-center justify-center p-3 rounded-xl border text-center transition-all ${
                       role === 'creator'
-                        ? 'border-violet-500 bg-violet-600/20 text-white shadow-md shadow-violet-600/20'
-                        : 'border-white/10 bg-white/[0.03] text-gray-400 hover:text-white'
+                        ? 'border-blue-600 bg-blue-50 text-blue-900 shadow-sm'
+                        : 'border-slate-200 bg-slate-50 text-slate-600 hover:border-slate-300'
                     }`}
                   >
-                    <User className="w-5 h-5 mb-1.5 text-violet-400" />
+                    <User className="w-5 h-5 mb-1.5 text-blue-600" />
                     <span className="text-xs font-bold">AI Creator</span>
-                    <span className="text-[10px] text-gray-400 mt-0.5">Offer Services</span>
+                    <span className="text-[10px] text-slate-500 mt-0.5">Offer Services</span>
                   </button>
                 </div>
               </div>
@@ -212,7 +212,7 @@ export default function AuthPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@creovate.ai"
-              leftIcon={<Mail className="w-4 h-4" />}
+              leftIcon={<Mail className="w-4 h-4 text-slate-400" />}
               required
             />
 
@@ -222,12 +222,12 @@ export default function AuthPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
-              leftIcon={<Lock className="w-4 h-4" />}
+              leftIcon={<Lock className="w-4 h-4 text-slate-400" />}
               required
             />
 
             {(error || authError) && (
-              <p className="text-xs text-rose-400 font-medium bg-rose-500/10 p-2.5 rounded-xl border border-rose-500/20">
+              <p className="text-xs text-rose-600 font-medium bg-rose-50 p-2.5 rounded-xl border border-rose-200">
                 {error || authError}
               </p>
             )}
@@ -235,7 +235,7 @@ export default function AuthPage() {
             <Button
               type="submit"
               variant="primary"
-              className="w-full py-3 text-sm shadow-xl shadow-violet-600/30"
+              className="w-full py-3 text-sm shadow-md shadow-blue-500/20"
               isLoading={isLoading}
               rightIcon={<ArrowRight className="w-4 h-4" />}
             >

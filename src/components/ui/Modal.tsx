@@ -53,7 +53,7 @@ export function Modal({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-midnight-900/80 backdrop-blur-md"
+            className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm"
           />
 
           {/* Modal Card */}
@@ -63,18 +63,18 @@ export function Modal({
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className={cn(
-              'relative w-full rounded-2xl border border-white/10 bg-midnight-800/95 p-6 shadow-2xl backdrop-blur-2xl z-10 my-8',
+              'relative w-full rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl z-10 my-8 text-slate-900',
               maxWidths[maxWidth]
             )}
           >
-            <div className="flex items-start justify-between gap-4 pb-4 border-b border-white/10">
+            <div className="flex items-start justify-between gap-4 pb-4 border-b border-slate-100">
               <div>
-                {title && <h3 className="text-xl font-bold text-white">{title}</h3>}
-                {description && <p className="text-sm text-gray-400 mt-1">{description}</p>}
+                {title && <h3 className="text-xl font-bold text-slate-900">{title}</h3>}
+                {description && <p className="text-sm text-slate-500 mt-1">{description}</p>}
               </div>
               <button
                 onClick={onClose}
-                className="rounded-lg p-1.5 text-gray-400 hover:bg-white/10 hover:text-white transition-colors"
+                className="rounded-lg p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />

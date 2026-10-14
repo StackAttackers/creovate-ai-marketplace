@@ -27,7 +27,7 @@ export default function App() {
     <BrowserRouter>
       <AuthProvider>
         <ScrollToTop />
-        <div className="min-h-screen flex flex-col bg-midnight-900 text-slate-100 selection:bg-violet-500/30 selection:text-white">
+        <div className="min-h-screen flex flex-col bg-white text-slate-900 selection:bg-blue-500/20 selection:text-blue-900">
           <Navbar />
           <main className="flex-1">
             <Routes>

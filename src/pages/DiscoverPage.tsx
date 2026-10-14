@@ -421,48 +421,48 @@ export default function DiscoverPage() {
     (searchTerm ? 1 : 0);
 
   return (
-    <div className="min-h-screen bg-midnight-950 pt-24 pb-20 text-white">
+    <div className="min-h-screen bg-white pt-24 pb-20 text-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Breadcrumb */}
-        <div className="mb-3 flex items-center gap-2 text-xs text-gray-400">
-          <Link to="/" className="hover:text-white transition-colors">
+        <div className="mb-3 flex items-center gap-2 text-xs text-slate-500">
+          <Link to="/" className="hover:text-blue-600 transition-colors">
             Home
           </Link>
           <span>/</span>
-          <span className="text-gray-300">Creator Search & Discovery</span>
+          <span className="text-slate-600">Creator Search & Discovery</span>
           <span>/</span>
-          <span className="text-violet-400 font-medium">
+          <span className="text-[#2563EB] font-medium">
             {selectedCategory === 'All' ? 'All AI Services' : selectedCategory}
           </span>
         </div>
 
         {/* Page Header Banner */}
-        <div className="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-white/10">
+        <div className="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-slate-200">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
               {selectedCategory === 'All'
                 ? searchTerm
                   ? `Results for "${searchTerm}"`
                   : 'AI Content Creators & Studios'
                 : selectedCategory}
             </h1>
-            <p className="text-gray-400 text-xs sm:text-sm mt-1.5 max-w-2xl">
+            <p className="text-slate-600 text-xs sm:text-sm mt-1.5 max-w-2xl">
               Filter by verified AI tools, production workflows, skills, content types, and commercial buyout terms.
             </p>
           </div>
 
           {/* Creovate Pro Switcher */}
-          <div className="flex items-center gap-3 shrink-0 bg-midnight-900 border border-white/10 px-4 py-2 rounded-xl">
+          <div className="flex items-center gap-3 shrink-0 bg-slate-50 border border-slate-200 px-4 py-2 rounded-xl shadow-sm">
             <div className="text-right">
-              <span className="text-xs font-bold text-white block">creovate. Pro</span>
-              <span className="text-[10px] text-emerald-400 font-semibold flex items-center justify-end gap-1">
+              <span className="text-xs font-bold text-slate-900 block">creovate. Pro</span>
+              <span className="text-[10px] text-[#2563EB] font-semibold flex items-center justify-end gap-1">
                 <ShieldCheck className="w-3 h-3" /> Vetted Commercial Talent
               </span>
             </div>
             <button
               onClick={() => setProOnly(!proOnly)}
               className={`w-11 h-6 flex items-center rounded-full p-1 transition-colors ${
-                proOnly ? 'bg-emerald-600' : 'bg-white/10'
+                proOnly ? 'bg-[#2563EB]' : 'bg-slate-300'
               }`}
             >
               <div
@@ -475,12 +475,12 @@ export default function DiscoverPage() {
         </div>
 
         {/* High-Precision Central Search Bar */}
-        <div className="mb-6 bg-gradient-to-r from-midnight-900 via-midnight-800 to-midnight-900 border border-white/10 rounded-2xl p-4 sm:p-5 shadow-2xl backdrop-blur-xl">
+        <div className="mb-6 bg-gradient-to-r from-blue-50/50 via-slate-50 to-blue-50/50 border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
           <form
             onSubmit={(e) => e.preventDefault()}
             className="relative flex items-center"
           >
-            <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none text-emerald-400">
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#2563EB]">
               <Search className="w-5 h-5" />
             </div>
             <input
@@ -488,21 +488,21 @@ export default function DiscoverPage() {
               value={searchTerm}
               onChange={(e) => handleSearchChange(e.target.value)}
               placeholder="Search by creator name, AI tool (Runway, Midjourney, ComfyUI), skill, prompt, or style..."
-              className="w-full rounded-xl bg-midnight-950/90 border border-white/15 pl-12 pr-28 py-3.5 text-sm sm:text-base text-white placeholder-gray-400 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 focus:outline-none transition-all shadow-inner"
+              className="w-full rounded-xl bg-white border border-slate-200 pl-12 pr-28 py-3.5 text-sm sm:text-base text-slate-900 placeholder-slate-400 focus:border-[#2563EB] focus:ring-2 focus:ring-blue-100 focus:outline-none transition-all shadow-sm"
             />
             {searchTerm && (
               <button
                 type="button"
                 onClick={() => handleSearchChange('')}
-                className="absolute right-24 top-1/2 -translate-y-1/2 p-1.5 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+                className="absolute right-24 top-1/2 -translate-y-1/2 p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
                 title="Clear search"
               >
                 <X className="w-4 h-4" />
               </button>
             )}
             <div className="absolute right-3 top-1/2 -translate-y-1/2">
-              <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-300">
-                <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+              <span className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-50 border border-blue-200 text-xs font-semibold text-[#2563EB]">
+                <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
                 <span>{filteredCreators.length} Found</span>
               </span>
             </div>
@@ -510,8 +510,8 @@ export default function DiscoverPage() {
 
           {/* Quick-Search Smart Suggestions */}
           <div className="mt-3.5 flex flex-wrap items-center gap-2 text-xs">
-            <span className="text-gray-400 font-medium shrink-0 flex items-center gap-1">
-              <Flame className="w-3.5 h-3.5 text-amber-400" /> Quick Search:
+            <span className="text-slate-500 font-medium shrink-0 flex items-center gap-1">
+              <Flame className="w-3.5 h-3.5 text-amber-500" /> Quick Search:
             </span>
             {[
               'Runway Gen-3',
@@ -530,8 +530,8 @@ export default function DiscoverPage() {
                 onClick={() => handleSearchChange(tag)}
                 className={`px-2.5 py-1 rounded-lg border text-xs transition-all ${
                   searchTerm.toLowerCase() === tag.toLowerCase()
-                    ? 'border-emerald-500 bg-emerald-500/20 text-emerald-300 font-semibold'
-                    : 'border-white/10 bg-white/5 text-gray-300 hover:text-white hover:border-white/20 hover:bg-white/10'
+                    ? 'border-[#2563EB] bg-blue-50 text-[#2563EB] font-semibold'
+                    : 'border-slate-200 bg-white text-slate-600 hover:text-[#2563EB] hover:border-blue-300 hover:bg-blue-50/50'
                 }`}
               >
                 {tag}
@@ -541,7 +541,7 @@ export default function DiscoverPage() {
               <button
                 type="button"
                 onClick={() => handleSearchChange('')}
-                className="px-2.5 py-1 rounded-lg text-violet-400 hover:text-violet-300 text-xs underline underline-offset-4"
+                className="px-2.5 py-1 rounded-lg text-blue-600 hover:text-blue-700 text-xs underline underline-offset-4"
               >
                 Clear Query
               </button>
@@ -550,7 +550,7 @@ export default function DiscoverPage() {
         </div>
 
         {/* Horizontal Multi-Attribute Filter Bar */}
-        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 bg-midnight-900/90 border border-white/10 p-3 rounded-2xl backdrop-blur-xl">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 bg-slate-50/90 border border-slate-200 p-3 rounded-2xl">
           <div className="flex flex-wrap items-center gap-2">
             {/* AI Tools Filter Dropdown */}
             <div className="relative">
@@ -560,17 +560,17 @@ export default function DiscoverPage() {
                 }
                 className={`px-3 py-2 rounded-xl border text-xs font-semibold inline-flex items-center gap-1.5 transition-all ${
                   selectedTool !== 'All Tools'
-                    ? 'border-violet-500 bg-violet-500/10 text-violet-300'
-                    : 'border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-white/10'
+                    ? 'border-blue-500 bg-blue-50 text-blue-700'
+                    : 'border-slate-200 bg-white text-slate-700 hover:text-blue-600 hover:bg-slate-50'
                 }`}
               >
-                <Wrench className="w-3.5 h-3.5 text-violet-400" />
+                <Wrench className="w-3.5 h-3.5 text-blue-600" />
                 <span>Tool: {selectedTool}</span>
-                <ChevronDown className="w-3.5 h-3.5 text-gray-400" />
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
               </button>
 
               {activeDropdown === 'tools' && (
-                <div className="absolute top-full left-0 mt-2 w-52 rounded-xl border border-white/15 bg-midnight-900 p-2 shadow-2xl z-30 space-y-1 max-h-60 overflow-y-auto">
+                <div className="absolute top-full left-0 mt-2 w-52 rounded-xl border border-slate-200 bg-white p-2 shadow-2xl z-30 space-y-1 max-h-60 overflow-y-auto">
                   {POPULAR_TOOLS.map((tool) => (
                     <button
                       key={tool}
@@ -578,10 +578,10 @@ export default function DiscoverPage() {
                         setSelectedTool(tool);
                         setActiveDropdown(null);
                       }}
-                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-left hover:bg-white/5 text-gray-300 hover:text-white"
+                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-left hover:bg-slate-100 text-slate-700 hover:text-blue-600"
                     >
                       <span>{tool}</span>
-                      {selectedTool === tool && <Check className="w-3.5 h-3.5 text-violet-400" />}
+                      {selectedTool === tool && <Check className="w-3.5 h-3.5 text-[#2563EB]" />}
                     </button>
                   ))}
                 </div>
@@ -596,17 +596,17 @@ export default function DiscoverPage() {
                 }
                 className={`px-3 py-2 rounded-xl border text-xs font-semibold inline-flex items-center gap-1.5 transition-all ${
                   selectedSkill !== 'All Skills'
-                    ? 'border-violet-500 bg-violet-500/10 text-violet-300'
-                    : 'border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-white/10'
+                    ? 'border-blue-500 bg-blue-50 text-blue-700'
+                    : 'border-slate-200 bg-white text-slate-700 hover:text-blue-600 hover:bg-slate-50'
                 }`}
               >
-                <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                <Sparkles className="w-3.5 h-3.5 text-blue-600" />
                 <span>Skill: {selectedSkill}</span>
-                <ChevronDown className="w-3.5 h-3.5 text-gray-400" />
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
               </button>
 
               {activeDropdown === 'skills' && (
-                <div className="absolute top-full left-0 mt-2 w-52 rounded-xl border border-white/15 bg-midnight-900 p-2 shadow-2xl z-30 space-y-1 max-h-60 overflow-y-auto">
+                <div className="absolute top-full left-0 mt-2 w-52 rounded-xl border border-slate-200 bg-white p-2 shadow-2xl z-30 space-y-1 max-h-60 overflow-y-auto">
                   {POPULAR_SKILLS.map((sk) => (
                     <button
                       key={sk}
@@ -614,10 +614,10 @@ export default function DiscoverPage() {
                         setSelectedSkill(sk);
                         setActiveDropdown(null);
                       }}
-                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-left hover:bg-white/5 text-gray-300 hover:text-white"
+                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-left hover:bg-slate-100 text-slate-700 hover:text-blue-600"
                     >
                       <span>{sk}</span>
-                      {selectedSkill === sk && <Check className="w-3.5 h-3.5 text-violet-400" />}
+                      {selectedSkill === sk && <Check className="w-3.5 h-3.5 text-[#2563EB]" />}
                     </button>
                   ))}
                 </div>
@@ -632,17 +632,17 @@ export default function DiscoverPage() {
                 }
                 className={`px-3 py-2 rounded-xl border text-xs font-semibold inline-flex items-center gap-1.5 transition-all ${
                   selectedContentType !== 'All Formats'
-                    ? 'border-violet-500 bg-violet-500/10 text-violet-300'
-                    : 'border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-white/10'
+                    ? 'border-blue-500 bg-blue-50 text-blue-700'
+                    : 'border-slate-200 bg-white text-slate-700 hover:text-blue-600 hover:bg-slate-50'
                 }`}
               >
-                <Film className="w-3.5 h-3.5 text-cyan-400" />
+                <Film className="w-3.5 h-3.5 text-sky-600" />
                 <span>Format: {selectedContentType}</span>
-                <ChevronDown className="w-3.5 h-3.5 text-gray-400" />
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
               </button>
 
               {activeDropdown === 'formats' && (
-                <div className="absolute top-full left-0 mt-2 w-48 rounded-xl border border-white/15 bg-midnight-900 p-2 shadow-2xl z-30 space-y-1">
+                <div className="absolute top-full left-0 mt-2 w-48 rounded-xl border border-slate-200 bg-white p-2 shadow-2xl z-30 space-y-1">
                   {CONTENT_TYPES.map((fmt) => (
                     <button
                       key={fmt}
@@ -650,17 +650,17 @@ export default function DiscoverPage() {
                         setSelectedContentType(fmt);
                         setActiveDropdown(null);
                       }}
-                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-left hover:bg-white/5 text-gray-300 hover:text-white"
+                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-left hover:bg-slate-100 text-slate-700 hover:text-blue-600"
                     >
                       <span>{fmt}</span>
-                      {selectedContentType === fmt && <Check className="w-3.5 h-3.5 text-violet-400" />}
+                      {selectedContentType === fmt && <Check className="w-3.5 h-3.5 text-[#2563EB]" />}
                     </button>
                   ))}
                 </div>
               )}
             </div>
 
-            {/* Bonus: Verification Signals Dropdown */}
+            {/* Verification Signals Dropdown */}
             <div className="relative">
               <button
                 onClick={() =>
@@ -668,17 +668,17 @@ export default function DiscoverPage() {
                 }
                 className={`px-3 py-2 rounded-xl border text-xs font-semibold inline-flex items-center gap-1.5 transition-all ${
                   selectedVerification !== 'all'
-                    ? 'border-emerald-500 bg-emerald-500/10 text-emerald-300'
-                    : 'border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-white/10'
+                    ? 'border-blue-500 bg-blue-50 text-blue-700'
+                    : 'border-slate-200 bg-white text-slate-700 hover:text-blue-600 hover:bg-slate-50'
                 }`}
               >
-                <Award className="w-3.5 h-3.5 text-emerald-400" />
+                <Award className="w-3.5 h-3.5 text-blue-600" />
                 <span>Trust: {VERIFICATION_SIGNALS.find((v) => v.id === selectedVerification)?.label}</span>
-                <ChevronDown className="w-3.5 h-3.5 text-gray-400" />
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
               </button>
 
               {activeDropdown === 'verification' && (
-                <div className="absolute top-full left-0 mt-2 w-52 rounded-xl border border-white/15 bg-midnight-900 p-2 shadow-2xl z-30 space-y-1">
+                <div className="absolute top-full left-0 mt-2 w-52 rounded-xl border border-slate-200 bg-white p-2 shadow-2xl z-30 space-y-1">
                   {VERIFICATION_SIGNALS.map((sig) => (
                     <button
                       key={sig.id}
@@ -686,10 +686,10 @@ export default function DiscoverPage() {
                         setSelectedVerification(sig.id);
                         setActiveDropdown(null);
                       }}
-                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-left hover:bg-white/5 text-gray-300 hover:text-white"
+                      className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-left hover:bg-slate-100 text-slate-700 hover:text-blue-600"
                     >
                       <span>{sig.label}</span>
-                      {selectedVerification === sig.id && <Check className="w-3.5 h-3.5 text-emerald-400" />}
+                      {selectedVerification === sig.id && <Check className="w-3.5 h-3.5 text-[#2563EB]" />}
                     </button>
                   ))}
                 </div>
@@ -704,20 +704,20 @@ export default function DiscoverPage() {
                 }
                 className={`px-3 py-2 rounded-xl border text-xs font-semibold inline-flex items-center gap-1.5 transition-all ${
                   maxBudget < 300000 || minBudget > 0
-                    ? 'border-violet-500 bg-violet-500/10 text-violet-300'
-                    : 'border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-white/10'
+                    ? 'border-blue-500 bg-blue-50 text-blue-700'
+                    : 'border-slate-200 bg-white text-slate-700 hover:text-blue-600 hover:bg-slate-50'
                 }`}
               >
                 <span>
                   Budget: {minBudget > 0 || maxBudget < 300000 ? `Up to ${formatCurrency(maxBudget)}` : 'Any Budget'}
                 </span>
-                <ChevronDown className="w-3.5 h-3.5 text-gray-400" />
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
               </button>
 
               {activeDropdown === 'budget' && (
-                <div className="absolute top-full left-0 mt-2 w-72 rounded-xl border border-white/15 bg-midnight-900 p-4 shadow-2xl z-30">
-                  <span className="text-xs font-bold text-white block mb-2">Max Rate (₹ INR)</span>
-                  <div className="text-sm font-black text-violet-400 mb-3">
+                <div className="absolute top-full left-0 mt-2 w-72 rounded-xl border border-slate-200 bg-white p-4 shadow-2xl z-30">
+                  <span className="text-xs font-bold text-slate-900 block mb-2">Max Rate (₹ INR)</span>
+                  <div className="text-sm font-black text-[#2563EB] mb-3">
                     {formatCurrency(maxBudget)}
                   </div>
                   <input
@@ -727,9 +727,9 @@ export default function DiscoverPage() {
                     step="10000"
                     value={maxBudget}
                     onChange={(e) => setMaxBudget(Number(e.target.value))}
-                    className="w-full accent-violet-600 bg-white/10 rounded-lg h-2 cursor-pointer mb-3"
+                    className="w-full accent-blue-600 bg-slate-200 rounded-lg h-2 cursor-pointer mb-3"
                   />
-                  <div className="flex justify-between text-[11px] text-gray-400 mb-4">
+                  <div className="flex justify-between text-[11px] text-slate-500 mb-4">
                     <span>₹15,000</span>
                     <span>₹3,00,000+</span>
                   </div>
@@ -747,19 +747,19 @@ export default function DiscoverPage() {
 
             {/* Search Input Filter */}
             <div className="relative min-w-[180px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => handleSearchChange(e.target.value)}
                 placeholder="Search tools, models, skills..."
-                className="w-full rounded-xl border border-white/10 bg-white/5 pl-9 pr-7 py-2 text-xs text-white placeholder-gray-500 focus:border-emerald-500 focus:outline-none"
+                className="w-full rounded-xl border border-slate-200 bg-white pl-9 pr-7 py-2 text-xs text-slate-900 placeholder-slate-400 focus:border-[#2563EB] focus:outline-none"
               />
               {searchTerm && (
                 <button
                   type="button"
                   onClick={() => handleSearchChange('')}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -770,7 +770,7 @@ export default function DiscoverPage() {
             {activeFiltersCount > 0 && (
               <button
                 onClick={handleResetFilters}
-                className="px-3 py-1.5 rounded-xl text-xs text-violet-400 hover:text-violet-300 font-medium inline-flex items-center gap-1.5 transition-colors"
+                className="px-3 py-1.5 rounded-xl text-xs text-[#2563EB] hover:text-[#1D4ED8] font-medium inline-flex items-center gap-1.5 transition-colors"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Reset All ({activeFiltersCount})</span>
@@ -780,7 +780,7 @@ export default function DiscoverPage() {
 
           {/* Right Side: Sort By Selector */}
           <div className="flex items-center gap-2">
-            <span className="text-xs text-gray-400 shrink-0">Sort:</span>
+            <span className="text-xs text-slate-500 shrink-0">Sort:</span>
             <div className="min-w-[150px]">
               <Select
                 value={sortBy}
@@ -805,8 +805,8 @@ export default function DiscoverPage() {
                 onClick={() => handleCategoryChange(cat)}
                 className={`whitespace-nowrap rounded-xl px-3.5 py-2 text-xs font-semibold transition-all ${
                   isActive
-                    ? 'bg-violet-600 text-white shadow-lg shadow-violet-600/30'
-                    : 'bg-midnight-900 text-gray-400 hover:bg-white/5 hover:text-white border border-white/5'
+                    ? 'bg-[#2563EB] text-white shadow-md shadow-blue-500/25'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900 border border-slate-200'
                 }`}
               >
                 {cat}
@@ -816,18 +816,18 @@ export default function DiscoverPage() {
         </div>
 
         {/* Results Header Status & Active Search Tag */}
-        <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-gray-400">
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-slate-500">
           <div className="flex items-center gap-2 flex-wrap">
             <span>
-              <strong className="text-white text-sm">{filteredCreators.length}</strong> AI creators match criteria
+              <strong className="text-slate-900 text-sm">{filteredCreators.length}</strong> AI creators match criteria
             </span>
             {searchTerm && (
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-medium text-[11px]">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-medium text-[11px]">
                 <span>Query: "{searchTerm}"</span>
                 <button
                   type="button"
                   onClick={() => handleSearchChange('')}
-                  className="hover:text-white"
+                  className="hover:text-blue-900"
                   title="Remove query"
                 >
                   <X className="w-3 h-3" />
@@ -837,7 +837,7 @@ export default function DiscoverPage() {
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1 text-emerald-400">
+            <span className="inline-flex items-center gap-1 text-[#2563EB]">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Full Commercial IP Buyout Protected</span>
             </span>
@@ -846,14 +846,14 @@ export default function DiscoverPage() {
 
         {/* Sensible Handling of Empty Results */}
         {filteredCreators.length === 0 ? (
-          <div className="rounded-2xl border border-white/10 bg-midnight-900/60 p-10 text-center max-w-xl mx-auto my-8">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center mx-auto mb-4">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-10 text-center max-w-xl mx-auto my-8 shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-4 border border-blue-200">
               <Search className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-white mb-2">
+            <h3 className="text-lg font-bold text-slate-900 mb-2">
               {searchTerm ? `No creators found matching "${searchTerm}"` : 'No creators found matching criteria'}
             </h3>
-            <p className="text-xs text-gray-400 mb-5 leading-relaxed">
+            <p className="text-xs text-slate-600 mb-5 leading-relaxed">
               {searchTerm
                 ? `We couldn't find any creators matching "${searchTerm}". Try clicking one of the popular search terms below or reset your filters:`
                 : "We couldn't find any creators matching your specific combination of tools, skills, and budget. Try exploring popular filters:"}
@@ -866,7 +866,7 @@ export default function DiscoverPage() {
                   onClick={() => {
                     handleSearchChange(sug);
                   }}
-                  className="rounded-lg bg-white/5 hover:bg-emerald-600/20 hover:text-emerald-200 border border-white/10 px-3 py-1.5 text-xs text-gray-300 transition-colors"
+                  className="rounded-lg bg-white hover:bg-blue-50 hover:text-blue-700 border border-slate-200 px-3 py-1.5 text-xs text-slate-700 transition-colors shadow-sm"
                 >
                   Search "{sug}"
                 </button>

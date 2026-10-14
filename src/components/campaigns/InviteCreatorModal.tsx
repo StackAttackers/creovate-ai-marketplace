@@ -65,11 +65,11 @@ export function InviteCreatorModal({
     >
       {sent ? (
         <div className="py-8 text-center space-y-3">
-          <div className="inline-flex p-3 rounded-full bg-emerald-500/20 text-emerald-400">
+          <div className="inline-flex p-3 rounded-full bg-blue-50 text-blue-600 border border-blue-200">
             <CheckCircle2 className="w-8 h-8" />
           </div>
-          <h4 className="text-lg font-bold text-white">Invitation Sent!</h4>
-          <p className="text-sm text-gray-400">
+          <h4 className="text-lg font-bold text-slate-900">Invitation Sent!</h4>
+          <p className="text-sm text-slate-500">
             {creatorName} has received your invitation notification.
           </p>
         </div>
@@ -95,7 +95,7 @@ export function InviteCreatorModal({
           />
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1.5">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-600 mb-1.5">
               Personalized Note
             </label>
             <textarea
@@ -103,12 +103,12 @@ export function InviteCreatorModal({
               onChange={(e) => setMessage(e.target.value)}
               rows={4}
               required
-              className="w-full rounded-xl border border-white/10 bg-white/[0.04] p-3 text-sm text-white placeholder-gray-500 focus:border-violet-500/50 focus:outline-none focus:ring-2 focus:ring-violet-500/20"
+              className="w-full rounded-xl border border-slate-200 bg-white p-3 text-sm text-slate-900 placeholder-slate-400 shadow-sm focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
               placeholder={`Hi ${creatorName}, we love your portfolio and would like to collaborate on our upcoming project...`}
             />
           </div>
 
-          <div className="flex items-center justify-end gap-3 pt-4 border-t border-white/10">
+          <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-200">
             <Button type="button" variant="ghost" onClick={onClose}>
               Cancel
             </Button>
